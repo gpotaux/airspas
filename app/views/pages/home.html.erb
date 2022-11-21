@@ -1,5 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner mt-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.tacdn.com/media/attractions-splice-spp-674x446/06/73/26/c3.jpg);">
+  <div class="container">
+    <h1>Venez vous détendre dans notre sélection de SPA faite pour vous!.</h1>
+    <div class="btn-banner">
+      <a class="btn btn-light mt-5 rounded-pill" href="#">Jetez un coup d'oeil!</a>
+    </div>
+  </div>
+</div>
+
 
 <% if user_signed_in? %>
   <p>Coucou <%= current_user.email %></p>
