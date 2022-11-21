@@ -1,0 +1,16 @@
+<h1>Spas#show</h1>
+<p>Find me in app/views/spas/show.html.erb</p>
+
+<%= @spa.name %>
+<%= @spa.address %>
+<%= @spa.category %>
+<%= @spa.price_per_hour %>
+
+<%= link_to "Return to index", spas_path %>
+
+<%= link_to "Edit the Spa", edit_spa_path %>
+
+<%= link_to "Delete",
+  spa_path(@spa),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>

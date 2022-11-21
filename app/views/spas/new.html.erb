@@ -1,0 +1,10 @@
+<h1>Spas#new</h1>
+<p>Find me in app/views/spas/new.html.erb</p>
+
+<%= simple_form_for(@spa) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :category, collection: Spa::CATEGORIES %>
+  <%= f.input :price_per_hour %>
+  <%= f.submit %>
+<% end %>

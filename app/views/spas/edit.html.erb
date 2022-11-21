@@ -1,0 +1,10 @@
+<h1>Spas#edit</h1>
+<p>Find me in app/views/spas/edit.html.erb</p>
+
+<%= simple_form_for(@spa) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :category %>
+  <%= f.input :price_per_hour %>
+  <%= f.submit %>
+<% end %>

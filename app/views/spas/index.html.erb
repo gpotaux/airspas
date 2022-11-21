@@ -1,0 +1,10 @@
+<h1>Spas#index</h1>
+<p>Find me in app/views/spas/index.html.erb</p>
+
+<ul>
+<% @spas.each do |spa| %>
+<li><%= link_to spa.name, spa_path(spa) %></li>
+<% end %>
+</ul>
+
+<%= link_to "Create a new spa", new_spa_path %>
