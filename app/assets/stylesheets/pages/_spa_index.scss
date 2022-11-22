@@ -26,3 +26,18 @@
   font-size: 14px;
   font-style: italic;
 }
+
+// top_index (filter + research_tab + info)
+
+.top_index {
+  margin-bottom: 20px;
+}
+
+// grid
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  height: 80%;
+  justify-content: space-around;
+}
