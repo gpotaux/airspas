@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   # create a new booking shell to provide to the form
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   # creation of the booking based on data submitted via the form
@@ -12,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.spa = @spa
     @booking.status = "pending"
-
+    authorize @booking
     if @booking.save
       redirect_to spa_path(@spa)
     else
