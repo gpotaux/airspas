@@ -9,9 +9,18 @@
         <div class="filter">
           <h5> Filtres </h5>
           <ul>
-            <li class="filter_button">Hammam</li>
-            <li class="filter_button">Sauna</li>
-            <li class="filter_button">Jacuzzi</li>
+            <%= link_to spas_path(query: params[:query], category: "Hammam") do %>
+              <li class="filter_button <%= "active" if params[:category] == "Hammam" %>">Hammam</li>
+            <% end %>
+            <%= link_to spas_path(query: params[:query], category: "Sauna") do %>
+              <li class="filter_button <%= "active" if params[:category] == "Sauna" %>">Sauna</li>
+            <% end %>
+            <%= link_to spas_path(query: params[:query], category: "Jacuzzi") do %>
+              <li class="filter_button <%= "active" if params[:category] == "Jacuzzi" %>">Jacuzzi</li>
+            <% end %>
+            <%= link_to spas_path do %>
+              <li class="filter_button">Reset</li>
+            <% end %>
           </ul>
         </div>
         <div class="info">
@@ -22,11 +31,17 @@
       <div>
         <div class="research_tab">
           <div class="research_symbol"> <img src="https://cdn-icons-png.flaticon.com/512/7472/7472700.png" alt="research_pin_symbol"> </div>
-          <form>
-            <input type="text" name="text" class="search" placeholder="Lille, France">
-            <input type="submit" name="submit" class="submit" value="Rechercher">
-            <input type="image" name="submit" class="loupe" src="css/img/picto/loupe.png">
-          </form>
+            <%= form_with url: spas_path, method: :get, class: "d-flex" do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Trouvez un spa"
+              %>
+              <% request.params.slice("category").each do |key, value| %>
+                <%= hidden_field_tag key, value %>
+              <% end %>
+              <%= submit_tag "Search", class: "btn btn-primary" %>
+            <% end %>
         </div>
       </div>
     </div>
@@ -37,13 +52,13 @@
       <h4>La selection</h4>
       <div class="grid">
         <% @spas.each do |spa| %>
-        <div class="card-selection">
-          <a href="#">
-            <%= cl_image_tag spa.photo.key, crop: :fill %>
-            <h5><%= spa.name %></h5>
-            <p>A partir de <strong><%= spa.price_per_hour %> EUR</strong></p>
-          </a>
-        </div>
+          <div class="card-selection">
+            <%= link_to spa_path(spa) do %>
+              <%= cl_image_tag spa.photo.key, crop: :fill %>
+              <h5><%= spa.name %></h5>
+              <p>A partir de <strong><%= spa.price_per_hour %> EUR</strong></p>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </article>
