@@ -1,9 +1,9 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon  sticky-top">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top nav-bg-color">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://img.freepik.com/vecteurs-libre/modele-logo-spa-bien-etre-vecteur-conception-professionnelle-nature-fleur_53876-136294.jpg?w=2000" %>
     <% end %>
-
+    <h1 class="pt-1">AIRSPAS</h1>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,14 +11,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
+          <div class="d-flex px-3">
+            <li class="nav-item active">
+              <%= link_to "BOOKINGS", "/bookings", class: "nav-link" %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to "SPAS", "/spas", class: "nav-link" %>
+            </li>
+          </div>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://static.thenounproject.com/png/363640-200.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
