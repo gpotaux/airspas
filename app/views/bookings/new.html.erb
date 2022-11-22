@@ -1,0 +1,13 @@
+<div data-controller="booking_form">
+  <h1 >Book your spa</h1>
+
+  <%= simple_form_for [:spa, @booking] do |f| %>
+    <%= f.input :start_date, as: :date, html5: true, input_html: { data: { action: "change->booking_form#handleChange", target: 'booking_form.test' } } %>
+    <%= f.input :end_date, as: :date, html5: true %>
+    <%= f.submit %>
+  <% end %>
+
+  <div>
+    <p>Number of days you would like to stay: <span data-booking_form-target="days"></span></p>
+  </div>
+</div>
