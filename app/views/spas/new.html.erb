@@ -6,5 +6,6 @@
   <%= f.input :address %>
   <%= f.input :category, collection: Spa::CATEGORIES %>
   <%= f.input :price_per_hour %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>

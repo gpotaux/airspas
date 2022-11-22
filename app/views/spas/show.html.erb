@@ -7,7 +7,7 @@
 
 <div class="container">
   <div class="card-trip border border-secondary rounded">
-    <img src="https://img.freepik.com/photos-gratuite/petales-fleurs-dans-spa-eau-violette-bougies-allumees-bords_23-2148003847.jpg?w=1380&t=st=1669114220~exp=1669114820~hmac=b665bee9b5c279f6f7370bee67c945ecad50062f68e8d770f924302beea28290" />
+    <%= cl_image_tag @spa.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-trip-infos">
       <div>
         <h2> <%= @spa.name %></h2>
