@@ -1,5 +1,35 @@
-<h1>Spas#index</h1>
-<p>Find me in app/views/spas/index.html.erb</p>
+
+<%# Top index  %>
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <div>
+      <h4>Trouvez votre spa rêvé</h4>
+      <p>Parmis les plus beaux jacuzzis, hammams et saunas, partout en France !</p>
+    </div>
+    <div>
+      <div class="research_tab">
+        <div class="research_symbol"> <img src="https://cdn-icons-png.flaticon.com/512/7472/7472700.png" alt="research_pin_symbol"> </div>
+        <form>
+          <input type="text" name="text" class="search" placeholder="Lille, France">
+          <input type="submit" name="submit" class="submit" value="Rechercher">
+          <input type="image" name="submit" class="loupe" src="css/img/picto/loupe.png">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="filter">
+      <h5> Filtres </h5>
+      <ul>
+        <li class="filter_button">Hammam</li>
+        <li class="filter_button">Sauna</li>
+        <li class="filter_button">Jacuzzi</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 
 <ul>
 <% @spas.each do |spa| %>

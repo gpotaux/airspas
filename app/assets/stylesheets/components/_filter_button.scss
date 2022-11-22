@@ -1,0 +1,18 @@
+.filter_button {
+  margin-right : 25px;
+  border: solid;
+  border-width: 1px;
+  border-color: #000;
+  border-radius: 25px;
+  list-style : none;
+  font-size: 14px;
+  padding: 6px 8px;
+}
+
+.filter_button:hover{
+ border-color: #0065FC;
+ background-color: #DEEBFF;
+ color: #0065FC;
+ cursor: pointer;
+ transition: 0.2s all;
+}
