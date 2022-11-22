@@ -45,14 +45,35 @@ article{
 }
 
 article > h4 {
-  margin: 10px 0px 0px 30px
+  margin: 10px 30px
 }
 
-// grid
+// article_grid
 
 .grid {
   display: flex;
   flex-wrap: wrap;
   height: 80%;
+  justify-content: space-around;
+}
+
+// aside_grid
+
+aside{
+  width:32%;
+  background-color:#FFF ;
+  border-radius: 25px;
+  height: 500px;
+}
+
+aside > .aside_title {
+  margin: 10px 30px
+}
+
+.aside_grid{
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  align-items: center;
   justify-content: space-around;
 }
