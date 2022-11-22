@@ -8,9 +8,10 @@
 
 <%= link_to "Return to index", spas_path %>
 
-<%= link_to "Edit the Spa", edit_spa_path %>
+<% if policy(@spa).edit? %>
+  <%= link_to "Edit this spa", edit_spa_path(@spa) %> |
+<% end %>
 
-<%= link_to "Delete",
-  spa_path(@spa),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+
+<%= button_to "Destroy this spa", @spa, method: :delete if policy(@spa).destroy? %>
+<!-- Supprime uniquement si l'utilisateur est le bon>
