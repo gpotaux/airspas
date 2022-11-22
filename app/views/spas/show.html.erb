@@ -1,16 +1,30 @@
-<h1>Spas#show</h1>
-<p>Find me in app/views/spas/show.html.erb</p>
 
-<%= @spa.name %>
-<%= @spa.address %>
-<%= @spa.category %>
-<%= @spa.price_per_hour %>
+<div class="text-center">
+<h1> <%= @spa.name %> </h1>
+<p>Venez vous détendre chez nous</p>
+</div>
 
-<%= link_to "Return to index", spas_path %>
 
-<%= link_to "Edit the Spa", edit_spa_path %>
+<div class="container">
+  <div class="card-trip border border-secondary rounded">
+    <img src="https://img.freepik.com/photos-gratuite/petales-fleurs-dans-spa-eau-violette-bougies-allumees-bords_23-2148003847.jpg?w=1380&t=st=1669114220~exp=1669114820~hmac=b665bee9b5c279f6f7370bee67c945ecad50062f68e8d770f924302beea28290" />
+    <div class="card-trip-infos">
+      <div>
+        <h2> <%= @spa.name %></h2>
+        <h2> <i class="fa-regular fa-location-dot"></i> <%= @spa.address%> </h2>
+        <h2> <%= @spa.price_per_hour %></h2>
 
-<%= link_to "Delete",
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+    </div>
+</div>
+
+<div class="text-right">
+<%= link_to "index", spas_path %>
+
+<%= link_to "Modifier mon spa", edit_spa_path %>
+
+<%= link_to "Supprimer",
   spa_path(@spa),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
+</div>
