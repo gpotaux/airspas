@@ -7,4 +7,4 @@
 <% end %>
 </ul>
 
-<%= link_to "Create a new spa", new_spa_path %>
+<%= link_to "Create a new spa", new_spa_path if policy(Spa).new? %>

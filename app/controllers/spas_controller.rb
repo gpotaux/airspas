@@ -1,19 +1,24 @@
 class SpasController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
   def index
-    @spas = Spa.all
+    @spas = policy_scope(Spa)
+    # Ici, on vise l'ensemble des spa (Spa.all mais avec le pundit)
   end
 
   def show
     @spa = Spa.find(params[:id])
+    authorize @spa
   end
 
   def new
     @spa = Spa.new
+    authorize @spa
   end
 
   def create
     @spa = Spa.new(spa_params)
     @spa.user_id = current_user.id
+    authorize @spa
     if @spa.save
       redirect_to spa_path(@spa)
     else
@@ -23,10 +28,12 @@ class SpasController < ApplicationController
 
   def edit
     @spa = Spa.find(params[:id])
+    authorize @spa
   end
 
   def update
     @spa = Spa.find(params[:id])
+    authorize @spa
     if @spa.update(spa_params)
       redirect_to spa_path(@spa)
     else
@@ -37,6 +44,7 @@ class SpasController < ApplicationController
   def destroy
     @spa = Spa.find(params[:id])
     @spa.destroy
+    authorize @spa
     redirect_to spas_path, status: :see_other
   end
 

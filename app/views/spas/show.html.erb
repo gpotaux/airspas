@@ -21,10 +21,13 @@
 <div class="text-right">
 <%= link_to "index", spas_path %>
 
-<%= link_to "Modifier mon spa", edit_spa_path %>
-
-<%= link_to "Supprimer",
-  spa_path(@spa),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+<% if policy(@spa).edit? %>
+  <%= link_to "Edit this spa", edit_spa_path(@spa) %> |
+<% end %>
+<%  if policy(@spa).destroy? %>
+  <%= link_to "Supprimer",
+    spa_path(@spa),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+<% end %>
 </div>
