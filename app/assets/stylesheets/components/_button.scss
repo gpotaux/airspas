@@ -1,0 +1,56 @@
+// Color palette
+$lapis: #145C9E;
+$paleSilver: #CBB9A8;
+$silverSand: #BBC7CE;
+$white: white;
+
+.login-btn {
+  background-color: $lapis;
+  color: white;
+  opacity: 0.6;
+}
+
+.login-btn:hover {
+  background-color: $lapis;
+  transition: 0.3s ease;
+  opacity: 1;
+  color: white;
+}
+
+.login-btn-mt {
+  margin-top: 5px;
+}
+
+.signup-btn {
+  background-color: $paleSilver;
+  color: white;
+  padding: 8.5px 7.1px;
+  text-decoration: none;
+  border-radius: 2px;
+  width: 73px;
+  height: 40px;
+  opacity: 0.6;
+}
+
+.signup-btn:hover {
+  transition: 0.3s ease;
+  opacity: 1;
+  color: white;
+}
+
+.forgotpwd-btn {
+  background-color: $silverSand;
+  color: white;
+  padding: 8.5px 7.1px;
+  text-decoration: none;
+  border-radius: 2px;
+  width: 192px;
+  height: 40px;
+  opacity: 0.6;
+}
+
+.forgotpwd-btn:hover {
+  transition: 0.3s ease;
+  opacity: 1;
+  color: white;
+}
