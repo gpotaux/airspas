@@ -16,7 +16,7 @@
         </div>
         <div class="info">
           <img src="https://cdn-icons-png.flaticon.com/512/665/665049.png" alt="pictogramme-information">
-          <span>Plus de 500 spas disponibles !</span>
+          <span>Plus de <%= @spas.length %> spas disponibles !</span>
         </div>
       </div>
       <div>
@@ -36,41 +36,15 @@
     <article>
       <h4>La selection</h4>
       <div class="grid">
+        <% @spas.each do |spa| %>
         <div class="card-selection">
           <a href="#">
-            <img src="https://www.samm-honfleur.com/gallery/20221103162459.jpeg" alt="image spa">
-            <h5>Spa Le Royal</h5>
-            <p>A partir de <strong>80€</strong></p>
+            <%= cl_image_tag spa.photo.key, crop: :fill %>
+            <h5><%= spa.name %></h5>
+            <p>A partir de <strong><%= spa.price_per_hour %> EUR</strong></p>
           </a>
         </div>
-        <div class="card-selection">
-          <a href="#">
-            <img src="https://www.samm-honfleur.com/gallery/20221103162459.jpeg" alt="image spa">
-            <h5>Spa Le Royal</h5>
-            <p>A partir de <strong>80€</strong></p>
-          </a>
-        </div>
-        <div class="card-selection">
-          <a href="#">
-            <img src="https://www.samm-honfleur.com/gallery/20221103162459.jpeg" alt="image spa">
-            <h5>Spa Le Royal</h5>
-            <p>A partir de <strong>80€</strong></p>
-          </a>
-        </div>
-        <div class="card-selection">
-          <a href="#">
-            <img src="https://www.samm-honfleur.com/gallery/20221103162459.jpeg" alt="image spa">
-            <h5>Spa Le Royal</h5>
-            <p>A partir de <strong>80€</strong></p>
-          </a>
-        </div>
-        <div class="card-selection">
-          <a href="#">
-            <img src="https://www.samm-honfleur.com/gallery/20221103162459.jpeg" alt="image spa">
-            <h5>Spa Le Royal</h5>
-            <p>A partir de <strong>80€</strong></p>
-          </a>
-        </div>
+        <% end %>
       </div>
     </article>
 
@@ -79,14 +53,5 @@
     </aside>
   </div>
 </div>
-
-
-
-
-<ul>
-<% @spas.each do |spa| %>
-<li><%= link_to spa.name, spa_path(spa) %></li>
-<% end %>
-</ul>
 
 <%= link_to "Create a new spa", new_spa_path if policy(Spa).new? %>
