@@ -33,12 +33,12 @@
   width: 100%;
   object-fit: cover;
   border-radius: 25px 25px 0px 0px;
+  transition: 0.3s all;
   // filter: blur(0.6px) grayscale(30%);
 }
 
 .card-selection:hover img{
   height: 80%;
-  transition: 0.3s all;
   // object-fit: fill;
 }
 
