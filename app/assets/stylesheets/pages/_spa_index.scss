@@ -33,6 +33,21 @@
   margin-bottom: 20px;
 }
 
+// article
+
+article{
+  display: flex;
+  flex-direction: column;
+  background-color:#FFF ;
+  border-radius: 25px;
+  width: 62%;
+  height: 500px;
+}
+
+article > h4 {
+  margin: 10px 0px 0px 30px
+}
+
 // grid
 
 .grid {
