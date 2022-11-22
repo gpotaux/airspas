@@ -1,4 +1,4 @@
-<div class="container login-form mt-5">
+<div class="container form-resize mt-5">
   <h2 class="text-center">Connexion</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
@@ -6,11 +6,14 @@
       <%= f.input :email,
                   required: false,
                   autofocus: true,
+                  placeholder: "Entrez votre adresse mail",
                   input_html: { autocomplete: "email" } %>
       <%= f.input :password,
+                  label: 'Mot de passe',
                   required: false,
+                  placeholder: "Entrez votre mot de passe",
                   input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <%= f.input :remember_me, label: "Se souvenir de moi",as: :boolean if devise_mapping.rememberable? %>
     </div>
 
     <div class="form-actions">

@@ -7,11 +7,18 @@ $white: white;
 .login-btn {
   background-color: $lapis;
   color: white;
+  padding: 8.5px 7.1px;
+  text-decoration: none;
+  border-radius: 2px;
   opacity: 0.6;
+  width: 73px;
+  height: 40px;
 }
 
 .login-btn:hover {
   background-color: $lapis;
+  width: 73px;
+  height: 40px;
   transition: 0.3s ease;
   opacity: 1;
   color: white;
@@ -33,6 +40,7 @@ $white: white;
 }
 
 .signup-btn:hover {
+  background-color: $paleSilver;
   transition: 0.3s ease;
   opacity: 1;
   color: white;
