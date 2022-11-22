@@ -1,0 +1,58 @@
+// filter
+
+.filter {
+  display: flex;
+  font-size: 18px;
+  }
+
+.filter h5{
+  display: flex;
+  align-items: center;
+  }
+
+.filter ul{
+ display: flex;
+ padding-inline-start: 25px;
+ }
+
+// info
+
+.info img{
+  width: 14px;
+  height: 14px;
+}
+
+.info span{
+  font-size: 14px;
+  font-style: italic;
+}
+
+// top_index (filter + research_tab + info)
+
+.top_index {
+  margin-bottom: 20px;
+}
+
+// article
+
+article{
+  display: flex;
+  flex-direction: column;
+  background-color:#FFF ;
+  border-radius: 25px;
+  width: 62%;
+  height: 500px;
+}
+
+article > h4 {
+  margin: 10px 0px 0px 30px
+}
+
+// grid
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  height: 80%;
+  justify-content: space-around;
+}

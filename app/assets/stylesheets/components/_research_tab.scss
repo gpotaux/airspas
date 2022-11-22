@@ -1,0 +1,56 @@
+/* Onglet recherche */
+
+.research_tab {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.research_symbol {
+  background-color:#868686;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  border-color:#F2F2F2;
+  border-radius: 17px 0px 0px 17px;
+  }
+
+.research_symbol img{
+  height: 20px;
+   }
+
+.research_tab input.search{
+  height: 100%;
+   width: 200px;
+   border: solid thin;
+   padding:5px 5px 5px 16px;
+   border-color:#F2F2F2;
+   font-size: 16px;
+   font-family:"raleway-bold";
+   color: #000;
+   }
+
+.research_tab input.submit{
+  height: 100%;
+   width: 120px;
+   margin-left: -3.5px;
+   padding: 5px;
+   border: solid thin;
+   background-color:#0065FC;
+   color: #FFF;
+   border-color: #F2F2F2;
+   border-radius: 0px 17px 17px 0px;
+   border-left: none;
+   font-family:"raleway-bold";
+   font-size: 15px;
+   }
+
+.research_tab input.submit:hover{
+   cursor: pointer;
+   }
+
+   .research_tab input.loupe{
+   display: none;
+   }
