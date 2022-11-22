@@ -1,3 +1,5 @@
+// filter
+
 .filter {
   display: flex;
   font-size: 18px;
@@ -12,3 +14,15 @@
  display: flex;
  padding-inline-start: 25px;
  }
+
+// info
+
+.info img{
+  width: 14px;
+  height: 14px;
+}
+
+.info span{
+  font-size: 14px;
+  font-style: italic;
+}
