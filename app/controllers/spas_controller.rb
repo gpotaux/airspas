@@ -1,11 +1,12 @@
 class SpasController < ApplicationController
   def index
     @spas = Spa.all
+    @spas = policy_scope(Spa) # Ici, on vise l'ensemble des spa
   end
 
   def show
     @spa = Spa.find(params[:id])
-    authorize @spa # autorisation pundit pour la vue pour tous
+    authorize @spa
   end
 
   def new
