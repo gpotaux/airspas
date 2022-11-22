@@ -1,7 +1,8 @@
 class SpasController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
   def index
-    @spas = Spa.all
-    @spas = policy_scope(Spa) # Ici, on vise l'ensemble des spa
+    @spas = policy_scope(Spa)
+    # Ici, on vise l'ensemble des spa (Spa.all mais avec le pundit)
   end
 
   def show
