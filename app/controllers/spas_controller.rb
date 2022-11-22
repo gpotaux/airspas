@@ -2,7 +2,15 @@ class SpasController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   def index
     @spas = policy_scope(Spa)
-    # Ici, on vise l'ensemble des spa (Spa.all mais avec le pundit)
+    @spas = @spas.where("address ILIKE ?", "%#{params[:query]}%") if(params[:query].present?)
+    @spas = @spas.where("category ILIKE ?", "%#{params[:category]}%") if(params[:category].present?)
+
+    # if(params['query'].present?)
+    #   @spas = policy_scope(Spa.where("address ILIKE ?", "%#{params[:query]}%"))
+    # else
+    #   # Ici, on vise l'ensemble des spa (Spa.all mais avec le pundit)
+    # end
+
   end
 
   def show

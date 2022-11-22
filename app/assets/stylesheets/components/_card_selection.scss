@@ -32,6 +32,7 @@ div.card-selection img{
   height: 60%;
   width: 100%;
   object-fit: cover;
+  transition: 0.3s all;
   border-radius: 25px 25px 0px 0px;
   filter: blur(0.6px) grayscale(30%);
 }
