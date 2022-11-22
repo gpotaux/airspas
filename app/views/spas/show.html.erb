@@ -4,19 +4,41 @@
 <p>Venez vous détendre chez nous</p>
 </div>
 
-
+<%#
 <div class="container">
   <div class="card-trip border border-secondary rounded">
     <img src="https://img.freepik.com/photos-gratuite/petales-fleurs-dans-spa-eau-violette-bougies-allumees-bords_23-2148003847.jpg?w=1380&t=st=1669114220~exp=1669114820~hmac=b665bee9b5c279f6f7370bee67c945ecad50062f68e8d770f924302beea28290" />
     <div class="card-trip-infos">
       <div>
         <h2> <%= @spa.name %></h2>
-        <h2><%= @spa.address%> </h2>
-        <h2> <%= @spa.price_per_hour %></h2>
+        <%# <h2><%=  </h2>
+        <%# <h2> <%= %></h2>
+<%#
 
+    </div> %>
+
+<div class="container">
+  <div class ="big-card">
+
+    <div class="card-info">
+      <img src="https://img.freepik.com/photos-gratuite/petales-fleurs-dans-spa-eau-violette-bougies-allumees-bords_23-2148003847.jpg?w=1380&t=st=1669114220~exp=1669114820~hmac=b665bee9b5c279f6f7370bee67c945ecad50062f68e8d770f924302beea28290"/>
+      <div class="card-info-text">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+        <p> prix : <%= @spa.price_per_hour  %> <i class="fa-sharp fa-solid fa-euro-sign"></i></p>
+        <p><i class="fa-solid fa-location-dot"></i>  <%= @spa.address%></p>
+          <div class="button">
+            <a href=>Book</a>
+          </div>
+      </div>
+
     </div>
+    <div >
+
+    </div>
+  </div>
+
 </div>
+
 
 <div class="text-right">
 <%= link_to "index", spas_path %>
