@@ -1,10 +1,13 @@
-<h1>Spas#edit</h1>
-<p>Find me in app/views/spas/edit.html.erb</p>
+<div class="container" style="margin-top: 30px">
+  <h4>Editer votre spa</h4>
+  <p>Modifiez les informations à mettre à jour</p>
 
-<%= simple_form_for(@spa) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :category %>
-  <%= f.input :price_per_hour %>
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for(@spa) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :category, collection: Spa::CATEGORIES %>
+    <%= f.input :price_per_hour %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
