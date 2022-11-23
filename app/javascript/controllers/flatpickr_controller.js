@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus";
 import flatpickr from "flatpickr";
 
 export default class extends Controller {
-  static targets = ["inputStartDate", "inputEndDate", "days"]
+  static targets = ["inputStartDate", "inputEndDate", "days", "bookingForm"]
 
   connect() {
     this.handleFlatpickr();
@@ -18,9 +18,9 @@ export default class extends Controller {
    * And diable bookings is to prevent selecting unavailable dates
    */
   handleFlatpickr = () => {
-    const bookingForm = document.getElementById('booking-form-div');
-    if (bookingForm) {
-      const bookings = JSON.parse(bookingForm.dataset.bookings);
+    console.log(this.bookingFormTarget);
+    if (this.bookingFormTarget) {
+      const bookings = JSON.parse(this.bookingFormTarget.dataset.bookings);
       flatpickr("#range_start", {
         minDate: "today",
         inline: true,

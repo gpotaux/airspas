@@ -3,13 +3,13 @@
     <h1 >Book your spa</h1>
     <div id='flat-booking-dates'>
         <%= simple_form_for([:spa, @booking]) do |f| %>
-            <%= f.input :start_date, as: :string, label: "Sélectionnez vos dates", input_html: { id: "range_start", class: "d-none", data: { action: "change->flatpickr#handleChange", target: 'flatpickr.inputStartDate' } } %>
+            <%= f.input :start_date, as: :string, label: "Sélectionnez vos dates", input_html: { id: "range_start", class: "d-none", data: { action: "change->flatpickr#handleChange", 'flatpickr-target' => 'inputStartDate' } } %>
             <%= hidden_field_tag f.input :end_date, as: :date, html5: true, input_html: { id: "range_end", class: "d-none", data: { action: "change->flatpickr#handleChange", target: 'flatpickr.inputEndDate' } } %>
             <p>Nombre de jours au total : <span data-flatpickr-target="days"></span></p>
             <%= f.submit %>
         <% end %>
     </div>
-    <div id="booking-form-div"
+    <div data-flatpickr-target="bookingForm"
       data-bookings="<%= @bookings_dates.to_json %>">
     </div>
   <% else %>
