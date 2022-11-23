@@ -49,7 +49,7 @@
 
   <div class="d-flex justify-content-between">
     <article>
-      <h4>La selection</h4>
+      <h4>La selection <%= link_to "+", new_spa_path if policy(Spa).new? %></h4>
       <div class="grid">
         <% @spas.each do |spa| %>
           <div class="card-selection">
@@ -106,5 +106,3 @@
     </aside>
   </div>
 </div>
-
-<%= link_to "Create a new spa", new_spa_path if policy(Spa).new? %>
