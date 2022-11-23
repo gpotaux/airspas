@@ -1,0 +1,22 @@
+<div class="container text-center mt-5 booking-card">
+  <h1>My bookings</h1>
+  <% @spas.each do |spa| %>
+    <% unless spa.bookings.empty? %>
+      <p class="mb-3"><%= spa.name %></p>
+      <% spa.bookings.each do |booking| %>
+        <div class="card-trip">
+          <%= cl_image_tag spa.photo.key, crop: :fill %>
+          <div class="card-trip-infos">
+            <div>
+              <h2>Date de début : <%= booking.start_date %></h2>
+              <h2>Date de fin : <%= booking.end_date %></h2>
+              <h2 class="card-trip-pricing">Status: <%= booking.status %></h2>
+              <%= link_to 'Valider', edit_booking_path(booking, {status: "validated"}) %>
+              <%= link_to 'Refuser', edit_booking_path(booking, {status: "declined"}) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
