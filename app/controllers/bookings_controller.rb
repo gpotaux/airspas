@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_spa, only: ['new', 'create']
 
+  def index
+    @spas = policy_scope(Spa).where(user: current_user)
+  end
+
   # Create a new booking shell to provide to the form
   # Booking dates are sent to flatpickr to block unavailable days
   def new
@@ -31,6 +35,12 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  # Edit the booking to change its status
+  def edit
+    @booking = policy_scope(Booking).where(id: params['id'])
+    raise
   end
 
   private
