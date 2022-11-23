@@ -1,55 +1,16 @@
-
-<div class="text-center">
-<h1> <%= @spa.name %> </h1>
-<p>Venez vous détendre chez nous</p>
-</div>
-
-<%#
 <div class="container">
-  <div class="card-trip border border-secondary rounded">
-    <%= cl_image_tag @spa.photo.key, crop: :fill %>
-    <div class="card-trip-infos">
-      <div>
-        <h2> <%= @spa.name %></h2>
-        <%# <h2><%=  </h2>
-        <%# <h2> <%= %></h2>
-<%#
-
-    </div> %>
-
-<div class="container">
-  <div class ="big-card">
-
+  <div class="expo-show">
+    <%= cl_image_tag @spa.photo.key, crop: :fill, class:"img-spa text-center" %>
     <div class="card-info">
-      <img src="https://img.freepik.com/photos-gratuite/petales-fleurs-dans-spa-eau-violette-bougies-allumees-bords_23-2148003847.jpg?w=1380&t=st=1669114220~exp=1669114820~hmac=b665bee9b5c279f6f7370bee67c945ecad50062f68e8d770f924302beea28290"/>
-      <div class="card-info-text">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
-        <p> <%= @spa.price_per_hour  %> <i class="fa-sharp fa-solid fa-euro-sign"></i></p>
-        <p><i class="fa-solid fa-location-dot"></i>  <%= @spa.address%></p>
-          <div class="button">
-            <a href=>Book</a>
-          </div>
-      </div>
-
-    </div>
-    <div >
-
+      <h5>
+        <%= @spa.name.capitalize %>
+        <% if policy(@spa).edit? %><%= link_to "Edit this spa", edit_spa_path(@spa) %> <% end %>
+        <% if policy(@spa).destroy? %> | <%= link_to "Supprimer", spa_path(@spa), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %><% end %>
+      </h5>
+      <p><img src="https://cdn-icons-png.flaticon.com/512/7472/7472700.png" alt="localisation pictogramme" style="width: 16px"><%= @spa.address %></p>
+      <p><%= @spa.price_per_hour %>€ pour une heure</p>
+      <p>Description :</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, iste sed ea quibusdam quidem vel perspiciatis magni alias fuga, eum unde enim doloribus ullam neque deserunt tenetur ducimus officia at.</p>
     </div>
   </div>
-
-</div>
-
-
-<div class="text-right">
-<%= link_to "index", spas_path %>
-
-<% if policy(@spa).edit? %>
-  <%= link_to "Edit this spa", edit_spa_path(@spa) %> |
-<% end %>
-<%  if policy(@spa).destroy? %>
-  <%= link_to "Supprimer",
-    spa_path(@spa),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
-<% end %>
 </div>
