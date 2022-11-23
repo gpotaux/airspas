@@ -18,7 +18,6 @@ export default class extends Controller {
    * And diable bookings is to prevent selecting unavailable dates
    */
   handleFlatpickr = () => {
-    console.log(this.bookingFormTarget);
     if (this.bookingFormTarget) {
       const bookings = JSON.parse(this.bookingFormTarget.dataset.bookings);
       flatpickr("#range_start", {
