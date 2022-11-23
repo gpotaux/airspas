@@ -4,8 +4,8 @@
     <div class="card-info">
       <h5>
         <%= @spa.name.capitalize %>
-        <% if policy(@spa).edit? %><%= link_to "Edit this spa", edit_spa_path(@spa) %> <% end %>
-        <% if policy(@spa).destroy? %> | <%= link_to "Supprimer", spa_path(@spa), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %><% end %>
+        <% if policy(@spa).edit? %> <%= link_to image_tag("https://cdn-icons-png.flaticon.com/512/1827/1827951.png", class: "picto"), edit_spa_path(@spa) %> <% end %>
+        <% if policy(@spa).destroy? %> | <%= link_to image_tag("https://cdn-icons-png.flaticon.com/512/1214/1214428.png", class: "picto"), spa_path(@spa), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr ?"} %><% end %>
       </h5>
       <p><img src="https://cdn-icons-png.flaticon.com/512/7472/7472700.png" alt="localisation pictogramme" style="width: 16px"><%= @spa.address %></p>
       <p><%= @spa.price_per_hour %>€ pour une heure</p>
