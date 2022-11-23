@@ -39,8 +39,13 @@ class BookingsController < ApplicationController
 
   # Edit the booking to change its status
   def edit
-    @booking = policy_scope(Booking).where(id: params['id'])
-    raise
+    @booking = Booking.find(params['id'])
+    authorize @booking
+    if @booking.update(status: params['status'])
+      redirect_to bookings_path
+    else
+      render "/bookings", status: :unprocessable_entity
+    end
   end
 
   private

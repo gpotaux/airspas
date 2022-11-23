@@ -12,7 +12,7 @@
               <h2>Date de fin : <%= booking.end_date %></h2>
               <h2 class="card-trip-pricing">Status: <%= booking.status %></h2>
               <%= link_to 'Valider', edit_booking_path(booking, {status: "validated"}) %>
-              <%= link_to "Refuser" %>
+              <%= link_to 'Refuser', edit_booking_path(booking, {status: "declined"}) %>
             </div>
           </div>
         </div>
