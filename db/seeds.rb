@@ -43,15 +43,15 @@ file = URI.open("https://www.eauzone-spa.com/images/centre_tourcoing/bali/bali_1
 spa.photo.attach(io: file, filename: "bali_1.jpg", content_type: "image/jpg")
 spa.save
 # -----------------------------------------Creation Booking------------------------------------------------------
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"Accepté")
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,11,23), end_date: Date.new(2022,11,26), status:"Accepté")
+Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,11,23), end_date: Date.new(2022,11,26), status:"pending")
 
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,05,02), end_date: Date.new(2022,05,10), status:"Accepté")
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,05,11), end_date: Date.new(2022,05,15), status:"Accepté")
+Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,05,02), end_date: Date.new(2022,05,10), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,05,11), end_date: Date.new(2022,05,15), status:"pending")
 
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2023,01,10), end_date: Date.new(2023,01,15), status:"Accepté")
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,10), end_date: Date.new(2022,12,20), status:"Accepté")
+Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2023,01,10), end_date: Date.new(2023,01,15), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,10), end_date: Date.new(2022,12,20), status:"pending")
 
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"Accepté")
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"Accepté")
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"Accepté")
+Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
