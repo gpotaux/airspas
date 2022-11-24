@@ -8,12 +8,12 @@ class SpasController < ApplicationController
 
     # a changer par @spas
     @markers = @spas.geocoded.map do |spa|
-      {
-        lat: spa.latitude,
-        lng: spa.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {spa: spa}),
-        image_url: helpers.asset_url("lotus.png")
-      }
+    {
+      lat: spa.latitude,
+      lng: spa.longitude,
+      info_window: render_to_string(partial: "info_window", locals: {spa: spa}),
+      image_url: helpers.asset_url("lotus.png")
+    }
   end
 
     # if(params['query'].present?)
@@ -34,6 +34,12 @@ class SpasController < ApplicationController
         to:   booking.end_date
       }
     end
+    @markers = [{
+      lat: @spa.latitude,
+      lng: @spa.longitude,
+      info_window: render_to_string(partial: "info_window", locals: {spa: @spa}),
+      image_url: helpers.asset_url("lotus.png")
+    }]
     authorize @spa
   end
 
