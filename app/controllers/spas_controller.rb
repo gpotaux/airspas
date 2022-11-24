@@ -6,7 +6,7 @@ class SpasController < ApplicationController
     @spas = @spas.where("category ILIKE ?", "%#{params[:category]}%") if(params[:category].present?)
 
 
-# a changer par @spas
+    # a changer par @spas
     @markers = @spas.geocoded.map do |spa|
       {
         lat: spa.latitude,
