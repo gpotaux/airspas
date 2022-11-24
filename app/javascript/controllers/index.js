@@ -15,6 +15,3 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
-
-import StimulusFlatpickrController from "./stimulus_flatpickr_controller"
-application.register("stimulus-flatpickr", StimulusFlatpickrController)
