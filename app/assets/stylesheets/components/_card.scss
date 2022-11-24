@@ -44,7 +44,6 @@
   margin: 0;
 }
 
-
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
@@ -60,6 +59,71 @@
   width: 40px;
 }
 
+// Cards réservées au dashboard
+
+.dashboard-card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.dashboard-card-trip > img {
+  height: 400px;
+  width: 200%;
+  object-fit: cover;
+}
+
+.dashboard-card-trip h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.dashboard-card-trip p {
+  font-size: 22px;
+  opacity: .7;
+  margin: 0;
+}
+
+.dashboard-card-trip .dashboard-card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  position: relative;
+}
+
+.dashboard-card-trip-infos .dashboard-card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
 .booking-card {
-  width: 450px;
+  width: 70%;
+}
+
+// Media Queries
+
+@media (max-width: 1550px) and (min-width: 1200px){
+  /* … */
+  .dashboard-card-trip .dashboard-card-trip-infos {
+    padding: 16px;
+    display: block;
+    justify-content: space-around;
+    align-items: baseline;
+    position: relative;
+  }
+}
+
+@media (max-width: 800px){
+  /* … */
+  .dashboard-card-trip .dashboard-card-trip-infos {
+    padding: 16px;
+    display: block;
+    justify-content: space-around;
+    align-items: baseline;
+    position: relative;
+  }
 }

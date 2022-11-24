@@ -1,3 +1,6 @@
+<div class="fix_footer_down">
+
+
 <div class="container">
   <div class="expo-show">
     <%= cl_image_tag @spa.photo.key, crop: :fill, class:"img-spa text-center" %>
@@ -14,4 +17,24 @@
       <span class="book-spa"><%= link_to "Book your spa", new_spa_booking_path(@spa) %></span>
     </div>
   </div>
+</div>
+
+<div data-controller="flatpickr">
+  <% if current_user.id != @spa.user_id  %>
+    <h1 > Réservez votre spa!</h1>
+    <div id='flat-booking-dates'>
+        <%= simple_form_for([@spa, @booking]) do |f| %>
+            <%= f.input :start_date, as: :string, label: "Sélectionnez vos dates", input_html: { id: "range_start", class: "d-none", data: { action: "change->flatpickr#handleChange", 'flatpickr-target' => 'inputStartDate' } } %>
+            <%= hidden_field_tag f.input :end_date, as: :date, html5: true, input_html: { id: "range_end", class: "d-none", data: { action: "change->flatpickr#handleChange", target: 'flatpickr.inputEndDate' } } %>
+            <p>Nombre de jours au total : <span data-flatpickr-target="days"></span></p>
+            <%= f.submit %>
+        <% end %>
+    </div>
+    <div data-flatpickr-target="bookingForm"
+      data-bookings="<%= @bookings_dates.to_json %>">
+    </div>
+  <% else %>
+    <p>Vous n'êtes pas autorisé à visiter cette page !</p>
+  <% end %>
+
 </div>

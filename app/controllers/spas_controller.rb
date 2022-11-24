@@ -5,6 +5,15 @@ class SpasController < ApplicationController
     @spas = @spas.where("address ILIKE ?", "%#{params[:query]}%") if(params[:query].present?)
     @spas = @spas.where("category ILIKE ?", "%#{params[:category]}%") if(params[:category].present?)
 
+
+# a changer par @spas
+    @markers = @spas.geocoded.map do |spa|
+      {
+        lat: spa.latitude,
+        lng: spa.longitude
+      }
+    end
+
     # if(params['query'].present?)
     #   @spas = policy_scope(Spa.where("address ILIKE ?", "%#{params[:query]}%"))
     # else
@@ -15,6 +24,14 @@ class SpasController < ApplicationController
 
   def show
     @spa = Spa.find(params[:id])
+    @booking = Booking.new
+    @bookings       = @spa.bookings
+    @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.start_date,
+        to:   booking.end_date
+      }
+    end
     authorize @spa
   end
 

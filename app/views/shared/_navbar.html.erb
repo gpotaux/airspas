@@ -13,6 +13,9 @@
         <% if user_signed_in? %>
           <div class="d-flex px-3">
             <li class="nav-item active">
+              <%= link_to "DASHBOARD", "/dashboards", class: "nav-link" %>
+            </li>
+            <li class="nav-item active">
               <%= link_to "BOOKINGS", "/bookings", class: "nav-link" %>
             </li>
             <li class="nav-item active">

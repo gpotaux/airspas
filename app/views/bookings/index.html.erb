@@ -1,22 +1,30 @@
 <div class="container text-center mt-5 booking-card">
-  <h1>My bookings</h1>
-  <% @spas.each do |spa| %>
-    <% unless spa.bookings.empty? %>
-      <p class="mb-3"><%= spa.name %></p>
-      <% spa.bookings.each do |booking| %>
-        <div class="card-trip">
-          <%= cl_image_tag spa.photo.key, crop: :fill %>
-          <div class="card-trip-infos">
-            <div>
-              <h2>Date de début : <%= booking.start_date %></h2>
-              <h2>Date de fin : <%= booking.end_date %></h2>
-              <h2 class="card-trip-pricing">Status: <%= booking.status %></h2>
-              <%= link_to 'Valider', edit_booking_path(booking, {status: "validated"}) %>
-              <%= link_to 'Refuser', edit_booking_path(booking, {status: "declined"}) %>
+  <h1 class="my-5">Réservation(s) en cours</h1>
+  <div class="row">
+    <% @spas.each do |spa| %>
+      <% unless spa.bookings.empty? %>
+        <% spa.bookings.each do |booking| %>
+          <% if booking.user_id == current_user.id %>
+            <div class="col-sm-12 col-md-12 col-lg-12 <%= spa.bookings.count == 1 ? "col-xl-12 p-5" : "col-xl-6" %> mb-5">
+              <div class="dashboard-card-trip">
+                <%= cl_image_tag spa.photo.key, crop: :fill %>
+                <h2 class="text-center mt-2 dashboard-card-title"><%= spa.name %></h2>
+                <div class="dashboard-card-trip-infos">
+                  <div>
+                    <p><strong>Date de début</strong> : <%= booking.start_date %></p>
+                    <p><strong>Date de fin</strong> : <%= booking.end_date %></p>
+                  </div>
+                  <div class="mt-2">
+                    <p>
+                      <strong>Statut</strong> : <%= booking.status %>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
