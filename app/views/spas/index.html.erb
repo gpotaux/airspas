@@ -52,11 +52,10 @@
           <div class="card-selection">
             <%= link_to spa_path(spa) do %>
               <%= cl_image_tag spa.photo.key, crop: :fill %>
-              <h5><%= spa.name %></h5>
-              <p>A partir de <strong><%= spa.price_per_hour %> €</strong></p>
-              <p>
+              <div class="d-flex justify-content-between">
+                <h5><%= spa.name %></h5>
                 <% if spa.reviews.count.positive? %>
-                  <div class="star_rating">
+                  <div class="star_rating" id="star_rating_selection">
                     <div class="stars-black">
                       <i class="fa-sharp fa-solid fa-star"></i>
                       <i class="fa-sharp fa-solid fa-star"></i>
@@ -74,7 +73,8 @@
                     <p><%= spa.average_rating.round(1) %></p>
                   </div>
                 <% end %>
-              </p>
+              </div>
+              <span>A partir de <strong><%= spa.price_per_hour %> €</strong></span>
             <% end %>
           </div>
         <% end %>
