@@ -24,6 +24,14 @@ class SpasController < ApplicationController
 
   def show
     @spa = Spa.find(params[:id])
+    @booking = Booking.new
+    @bookings       = @spa.bookings
+    @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.start_date,
+        to:   booking.end_date
+      }
+    end
     authorize @spa
   end
 

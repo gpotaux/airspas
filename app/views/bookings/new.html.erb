@@ -1,6 +1,6 @@
 <div data-controller="flatpickr">
   <% if current_user.id != @spa.user_id  %>
-    <h1 >Book your spa</h1>
+    <h1 > Réservez votre spa! </h1>
     <div id='flat-booking-dates'>
         <%= simple_form_for([:spa, @booking]) do |f| %>
             <%= f.input :start_date, as: :string, label: "Sélectionnez vos dates", input_html: { id: "range_start", class: "d-none", data: { action: "change->flatpickr#handleChange", 'flatpickr-target' => 'inputStartDate' } } %>
