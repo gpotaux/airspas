@@ -121,7 +121,15 @@ puts "#{Booking.count} bookings created"
 puts "Creating reviews.."
 
 Booking.all.each do |booking|
-  3.times { Review.create!(rating: (3..5).to_a.sample, booking: booking) }
+  10.times { Review.create!(rating: (3..5).to_a.sample, booking: booking) }
+end
+
+Booking.all.first(5).each do |booking|
+  (10..20).to_a.sample.times { Review.create!(rating: 5, booking: booking) }
+end
+
+Booking.all.last(3).each do |booking|
+  5.times { Review.create!(rating: (1..2).to_a.sample, booking: booking) }
 end
 
 puts "#{Review.count} reviews created"
