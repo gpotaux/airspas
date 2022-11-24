@@ -37,13 +37,18 @@
                 class: "form-control",
                 placeholder: "Trouvez un spa"
               %>
-              <% request.params.slice("category").each do |key, value| %>
+                <% request.params.slice("category").each do |key, value| %>
                 <%= hidden_field_tag key, value %>
               <% end %>
               <%= submit_tag "Search", class: "btn btn-secondary" %>
             <% end %>
+          </div>
         </div>
-      </div>
+        <div style="width: 100%; height: 150px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
     </div>
   </div>
 
@@ -125,7 +130,3 @@
     </aside>
   </div>
 </div>
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
