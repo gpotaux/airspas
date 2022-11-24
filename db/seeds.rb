@@ -1,17 +1,21 @@
 require "open-uri"
 # Supprimer les model - Clean DB
 
-puts "Destroying Booking.."
+puts "Destroying reviews.."
+Review.destroy_all
+puts "Reviews destroyed"
+
+puts "Destroying Bookings.."
 Booking.destroy_all
-puts "Booking destroyed"
+puts "Bookings destroyed"
 
-puts "Destroying Spa.."
+puts "Destroying Spas.."
 Spa.destroy_all
-puts "Spa destroyed"
+puts "Spas destroyed"
 
-puts "Destroying User.."
+puts "Destroying Users.."
 User.destroy_all
-puts "User destroyed"
+puts "Users destroyed"
 
 # -----------------------------------------Création user
 puts "Creating users.."
@@ -79,11 +83,8 @@ puts "#{Booking.count} bookings created"
 # -----------------------------------------Creation Reviews------------------------------------------------------
 puts "Creating reviews.."
 
-3.times { Review.create!(rating: (1..5).to_a.sample, spa: spa1) }
-3.times { Review.create!(rating: (1..5).to_a.sample, spa: spa2) }
-3.times { Review.create!(rating: (1..5).to_a.sample, spa: spa3) }
-3.times { Review.create!(rating: (1..5).to_a.sample, spa: spa4) }
-3.times { Review.create!(rating: (1..5).to_a.sample, spa: spa5) }
-3.times { Review.create!(rating: (1..5).to_a.sample, spa: spa6) }
+Booking.all.each do |booking|
+  3.times { Review.create!(rating: (1..5).to_a.sample, booking: booking) }
+end
 
 puts "#{Review.count} reviews created"

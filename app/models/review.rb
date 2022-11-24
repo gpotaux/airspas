@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :spa
+  belongs_to :booking
   validates :rating, presence: true
 end
