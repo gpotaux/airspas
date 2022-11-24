@@ -1,21 +1,15 @@
-.stars-outer {
-
+.stars-black {
+  position: relative;
+  display: inline-block;
+  color: #ccc;
 }
 
-.stars-inner {
+.stars-gold {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   white-space: nowrap;
   overflow: hidden;
-  width: 0;
   color: #f8ce0b;
-}
-
-.stars-outer::before {
-
-}
-
-.stars-inner::before {
-
+  width: 50%;
 }
