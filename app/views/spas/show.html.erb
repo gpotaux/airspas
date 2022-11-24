@@ -11,6 +11,25 @@
         <% if policy(@spa).destroy? %> | <%= link_to image_tag("https://cdn-icons-png.flaticon.com/512/1214/1214428.png", class: "picto"), spa_path(@spa), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr ?"} %><% end %>
       </h5>
       <p><img src="https://cdn-icons-png.flaticon.com/512/7472/7472700.png" alt="localisation pictogramme" style="width: 16px"><%= @spa.address %></p>
+      <% if @spa.reviews.count.positive? %>
+        <div class="star_rating" id="star_rating_show">
+          <div class="stars-black">
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star"></i>
+            <div class="stars-gold" style="width: <%= @spa.average_rating/5*100 %>%">
+              <i class="fa-sharp fa-solid fa-star"></i>
+              <i class="fa-sharp fa-solid fa-star"></i>
+              <i class="fa-sharp fa-solid fa-star"></i>
+              <i class="fa-sharp fa-solid fa-star"></i>
+              <i class="fa-sharp fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p><%= @spa.average_rating.round(1) %> selon <%= @spa.reviews.count %> avis</p>
+        </div>
+      <% end %>
       <p><%= @spa.price_per_hour %>€ pour une heure</p>
       <p>Description :</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, iste sed ea quibusdam quidem vel perspiciatis magni alias fuga, eum unde enim doloribus ullam neque deserunt tenetur ducimus officia at.</p>
