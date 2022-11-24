@@ -1,10 +1,10 @@
-<div class="container text-center mt-5 booking-card">
+<div class="container-fluid text-center mt-5 booking-card">
   <h1 class="my-5">My dashboard</h1>
   <div class="row">
   <% @spas.each do |spa| %>
     <% unless spa.bookings.empty? %>
       <% spa.bookings.each do |booking| %>
-        <div class="col-sm-12 col-md-12 col-lg-6 <% spa.bookings.count > 1 ? "col-xl-6" : "col-xl-12" %> mb-5">
+        <div class="col-sm-12 col-md-12 col-lg-12 <%= spa.bookings.count > 1 ? "col-xl-12" : "col-xl-6" %> mb-5">
           <div class="dashboard-card-trip">
             <%= cl_image_tag spa.photo.key, crop: :fill %>
             <h2 class="text-center mt-2 dashboard-card-title"><%= spa.name %></h2>
