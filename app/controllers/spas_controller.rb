@@ -14,6 +14,9 @@ class SpasController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: {spa: spa}),
         image_url: helpers.asset_url("lotus.png")
       }
+
+      # Array des 5 plus populaires mélangés pour affichage dans l'index :
+      @spas_sorted = Spa.all.sort_by { |spa| spa.average_rating }.reverse.slice(1..5).shuffle
   end
 
     # if(params['query'].present?)
