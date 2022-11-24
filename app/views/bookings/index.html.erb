@@ -1,22 +1,5 @@
-<<<<<<< HEAD
-<div class="container text-center mt-5 booking-card fix_footer_down">
-  <h1>My bookings</h1>
-  <% @spas.each do |spa| %>
-    <% unless spa.bookings.empty? %>
-      <p class="mb-3"><%= spa.name %></p>
-      <% spa.bookings.each do |booking| %>
-        <div class="card-trip">
-          <%= cl_image_tag spa.photo.key, crop: :fill %>
-          <div class="card-trip-infos">
-            <div>
-              <h2>Date de début : <%= booking.start_date %></h2>
-              <h2>Date de fin : <%= booking.end_date %></h2>
-              <h2 class="card-trip-pricing">Status: <%= booking.status %></h2>
-              <%= link_to 'Valider', edit_booking_path(booking, {status: "validated"}) %>
-              <%= link_to 'Refuser', edit_booking_path(booking, {status: "declined"}) %>
-=======
 <div class="container text-center mt-5 booking-card">
-  <h1 class="my-5">Mon dashboard</h1>
+  <h1 class="my-5">Réservation(s) en cours</h1>
   <div class="row">
     <% @spas.each do |spa| %>
       <% unless spa.bookings.empty? %>
@@ -38,7 +21,6 @@
                   </div>
                 </div>
               </div>
->>>>>>> master
             </div>
           <% end %>
         <% end %>
