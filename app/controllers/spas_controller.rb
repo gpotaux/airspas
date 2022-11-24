@@ -10,9 +10,11 @@ class SpasController < ApplicationController
     @markers = @spas.geocoded.map do |spa|
       {
         lat: spa.latitude,
-        lng: spa.longitude
+        lng: spa.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {spa: spa}),
+        image_url: helpers.asset_url("lotus.png")
       }
-    end
+  end
 
     # if(params['query'].present?)
     #   @spas = policy_scope(Spa.where("address ILIKE ?", "%#{params[:query]}%"))
