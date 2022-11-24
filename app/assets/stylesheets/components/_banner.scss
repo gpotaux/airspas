@@ -25,6 +25,11 @@
   }
 
 .btn-banner > a{
-  color: white;
-  background-color: transparent;
+  color: black;
+  background-color: white;
+  transition: 1s;
+}
+
+.btn-banner :hover{
+  background-color: #f6e7c9;
 }
