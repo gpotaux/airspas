@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :spa
-
+  has_one :review
   validates :start_date, :end_date, presence: true
   validate :booking_dates_verify
 

@@ -1,0 +1,15 @@
+.stars-black {
+  position: relative;
+  display: inline-block;
+  color: #ccc;
+}
+
+.stars-gold {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #f8ce0b;
+  // width: 100%;
+}

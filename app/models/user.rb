@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :spas
   has_many :bookings
-  # Récupérer tous les bookings de tous les spas
+  has_many :reviews, through: :bookings
   has_many :bookings_as_owner, through: :spas, source: :bookings
 end
