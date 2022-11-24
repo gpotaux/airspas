@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 import flatpickr from "flatpickr";
+import { French } from "flatpickr/dist/l10n/fr.js"
 
 export default class extends Controller {
   static targets = ["inputStartDate", "inputEndDate", "days", "bookingForm"]
@@ -21,6 +22,7 @@ export default class extends Controller {
     if (this.bookingFormTarget) {
       const bookings = JSON.parse(this.bookingFormTarget.dataset.bookings);
       flatpickr("#range_start", {
+        "locale": French,
         minDate: "today",
         inline: true,
         mode: "range",
