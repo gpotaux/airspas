@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
   # Creation of the booking based on data submitted via the form
   # Start date and end date have been added manually due to flatpickr gem
   def create
-    selected_dates = booking_params['start_date'].split(" to ")
+    selected_dates = booking_params['start_date'].split(" au ")
     @booking = Booking.new
     @booking.user = current_user
     @booking.spa = @spa
