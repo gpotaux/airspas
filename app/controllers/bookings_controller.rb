@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_spa, only: ['new', 'create']
 
   def index
-    @spas = policy_scope(Spa).where(user: current_user)
+    @spas = policy_scope(Spa)
   end
 
   # Create a new booking shell to provide to the form
@@ -34,17 +34,6 @@ class BookingsController < ApplicationController
       redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
-    end
-  end
-
-  # Edit the booking to change its status
-  def edit
-    @booking = Booking.find(params['id'])
-    authorize @booking
-    if @booking.update(status: params['status'])
-      redirect_to bookings_path
-    else
-      render "/bookings", status: :unprocessable_entity
     end
   end
 
