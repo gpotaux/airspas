@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_spa, only: ['new', 'create']
 
+  def index
+    @spas = policy_scope(Spa)
+  end
+
   # Create a new booking shell to provide to the form
   # Booking dates are sent to flatpickr to block unavailable days
   def new

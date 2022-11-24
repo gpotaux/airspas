@@ -2,6 +2,7 @@ class DashboardsController < ApplicationController
 
   def index
     @spas = policy_scope(Spa).where(user: current_user)
+    @bookings = current_user.bookings_as_owner.order("id ASC")
   end
 
   # Edit the booking to change its status

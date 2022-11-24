@@ -1,38 +1,36 @@
 <div class="container-fluid text-center mt-5 booking-card">
   <h1 class="my-5">Mon dashboard</h1>
   <div class="row">
-    <% @spas.each do |spa| %>
-      <% unless spa.bookings.empty? %>
-        <% spa.bookings.each do |booking| %>
-          <div class="col-sm-12 col-md-12 col-lg-12 <%= spa.bookings.count > 1 ? "col-xl-12" : "col-xl-6" %> mb-5">
-            <div class="dashboard-card-trip">
-              <%= cl_image_tag spa.photo.key, crop: :fill %>
-              <h2 class="text-center mt-2 dashboard-card-title"><%= spa.name %></h2>
-              <div class="dashboard-card-trip-infos">
-                <div>
-                  <p><strong>Date de début</strong> : <%= booking.start_date %></p>
-                  <p><strong>Date de fin</strong> : <%= booking.end_date %></p>
-                  <p><strong>Réservé par</strong> : <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-                </div>
-                <div class="mt-2">
-                  <p>
-                    <strong>Statut</strong> : <%= booking.status %>
-                  </p>
-                  <% if booking.status == "validated" %>
-                    <%= link_to 'Pending', edit_dashboard_path(booking, {status: "pending"}), class: "btn btn-secondary" %>
-                    <%= link_to 'Refuser', edit_dashboard_path(booking, {status: "declined"}), class: "btn btn-danger text-white"  %>
-                  <% elsif booking.status == "declined" %>
-                    <%= link_to 'Pending', edit_dashboard_path(booking, {status: "pending"}), class: "btn btn-secondary" %>
-                    <%= link_to 'Valider', edit_dashboard_path(booking, {status: "validated"}), class: "btn btn-primary" %>
-                  <% else %>
-                    <%= link_to 'Valider', edit_dashboard_path(booking, {status: "validated"}), class: "btn btn-primary" %>
-                    <%= link_to 'Refuser', edit_dashboard_path(booking, {status: "declined"}), class: "btn btn-danger text-white"  %>
-                  <% end %>
-                </div>
+    <% @bookings.each do |booking| %>
+      <% unless @bookings.empty? %>
+        <div class="col-sm-12 col-md-12 <%= @bookings.count == 1 ? "col-xl-12 p-5" : "col-xl-6" %> mb-5">
+          <div class="dashboard-card-trip">
+            <%= cl_image_tag booking.spa.photo.key, crop: :fill %>
+            <h2 class="text-center mt-2 dashboard-card-title"><%= booking.spa.name %></h2>
+            <div class="dashboard-card-trip-infos">
+              <div>
+                <p><strong>Date de début</strong> : <%= booking.start_date %></p>
+                <p><strong>Date de fin</strong> : <%= booking.end_date %></p>
+                <p><strong>Réservé par</strong> : <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+              </div>
+              <div class="mt-2">
+                <p>
+                  <strong>Statut</strong> : <%= booking.status %>
+                </p>
+                <% if booking.status == "validated" %>
+                  <%= link_to 'Pending', edit_dashboard_path(booking, {status: "pending"}), class: "btn btn-secondary" %>
+                  <%= link_to 'Refuser', edit_dashboard_path(booking, {status: "declined"}), class: "btn btn-danger text-white"  %>
+                <% elsif booking.status == "declined" %>
+                  <%= link_to 'Pending', edit_dashboard_path(booking, {status: "pending"}), class: "btn btn-secondary" %>
+                  <%= link_to 'Valider', edit_dashboard_path(booking, {status: "validated"}), class: "btn btn-primary" %>
+                <% else %>
+                  <%= link_to 'Valider', edit_dashboard_path(booking, {status: "validated"}), class: "btn btn-primary" %>
+                  <%= link_to 'Refuser', edit_dashboard_path(booking, {status: "declined"}), class: "btn btn-danger text-white"  %>
+                <% end %>
               </div>
             </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
     <% end %>
   </div>
