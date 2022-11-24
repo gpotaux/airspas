@@ -32,12 +32,8 @@
         <div class="research_tab">
           <div class="research_symbol"> <img src="https://cdn-icons-png.flaticon.com/512/7472/7472700.png" alt="research_pin_symbol"> </div>
             <%= form_with url: spas_path, method: :get, class: "d-flex" do %>
-              <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "Trouvez un spa"
-              %>
-                <% request.params.slice("category").each do |key, value| %>
+              <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Trouvez un spa"%>
+              <% request.params.slice("category").each do |key, value| %>
                 <%= hidden_field_tag key, value %>
               <% end %>
               <%= submit_tag "Search", class: "btn btn-secondary" %>
@@ -63,22 +59,22 @@
               <h5><%= spa.name %></h5>
               <p>A partir de <strong><%= spa.price_per_hour %> EUR</strong></p>
               <p>
-              <% if spa.reviews.count.positive? %>
-                <div class="stars-black">
-                  <i class="fa-sharp fa-solid fa-star"></i>
-                  <i class="fa-sharp fa-solid fa-star"></i>
-                  <i class="fa-sharp fa-solid fa-star"></i>
-                  <i class="fa-sharp fa-solid fa-star"></i>
-                  <i class="fa-sharp fa-solid fa-star"></i>
-                  <div class="stars-gold" style="width: <%= spa.average_rating/5*100 %>%">
+                <% if spa.reviews.count.positive? %>
+                  <div class="stars-black">
                     <i class="fa-sharp fa-solid fa-star"></i>
                     <i class="fa-sharp fa-solid fa-star"></i>
                     <i class="fa-sharp fa-solid fa-star"></i>
                     <i class="fa-sharp fa-solid fa-star"></i>
                     <i class="fa-sharp fa-solid fa-star"></i>
+                    <div class="stars-gold" style="width: <%= spa.average_rating/5*100 %>%">
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                    </div>
                   </div>
-                </div>
-                <%= spa.average_rating.round(1) %>
+                  <%= spa.average_rating.round(1) %>
                 <% end %>
               </p>
             <% end %>
