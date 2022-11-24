@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
     @booking.end_date = selected_dates[1]
     authorize @booking
     if @booking.save
-      redirect_to spa_path(@spa)
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
