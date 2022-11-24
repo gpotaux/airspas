@@ -51,12 +51,12 @@ file = URI.open("https://www.eauzone-spa.com/images/centre_hellemmes/rio/rio_3.j
 spa4.photo.attach(io: file, filename: "photo-rio-de-janeiro.jpg?w=1200&h=1200&s=1", content_type: "image/jpg")
 spa4.save
 
-spa5 = Spa.create!(name: "Concept Spa", address: "10 avenue Pablo Picasso 33000 Bordeaux", price_per_hour: "80", category: "hammam", user: User.first)
-file = URI.open("https://www.tooistanbul.com/wp-content/uploads/2019/12/hamam.jpg")
+spa5 = Spa.create!(name: "Spa La Zoologie", address: "151 Cours de la Marne, 33800, Bordeaux France", price_per_hour: "80", category: "hammam", user: User.first)
+file = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/76/3b/6d/jacuzzi.jpg?w=1400&h=-1&s=1")
 spa5.photo.attach(io: file, filename: "hamam.jpg", content_type: "image/jpg")
 spa5.save
 
-spa6 = Spa.create!(name: "Suite & Spa", address: "4 allée saint Benoit 44000 Nantes", price_per_hour: "50", category: "jacuzzi", user: User.second)
+spa6 = Spa.create!(name: "Suite & Spa", address: "178 Rue Gambetta, 59110 La Madeleine", price_per_hour: "50", category: "jacuzzi", user: User.second)
 file = URI.open("https://www.eauzone-spa.com/images/centre_tourcoing/bali/bali_1.jpg")
 spa6.photo.attach(io: file, filename: "bali_1.jpg", content_type: "image/jpg")
 spa6.save
