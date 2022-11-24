@@ -61,7 +61,7 @@ file = URI.open("https://www.eauzone-spa.com/images/centre_tourcoing/bali/bali_1
 spa6.photo.attach(io: file, filename: "bali_1.jpg", content_type: "image/jpg")
 spa6.save
 
-spa7 = Spa.create!(name: "Apsara Thai Spa", address: "50 Rue Barthélémy Delespaul 59000 Lille", price_per_hour: "60", category: "sauna", user: User.first)
+spa7 = Spa.create!(name: "Apsara Thai Spa", address: "50 Rue Barthélémy Delespaul 59000 Lille", price_per_hour: "60", category: "jacuzzi", user: User.first)
 file = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/de/81/4f/spa-privatif.jpg?w=1000&h=800&s=1")
 spa7.photo.attach(io: file, filename: "apsara-thai-spa.jpg", content_type: "image/jpg")
 spa7.save
