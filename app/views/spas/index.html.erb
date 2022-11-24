@@ -62,6 +62,25 @@
               <%= cl_image_tag spa.photo.key, crop: :fill %>
               <h5><%= spa.name %></h5>
               <p>A partir de <strong><%= spa.price_per_hour %> EUR</strong></p>
+              <p>
+              <% if spa.reviews.count.positive? %>
+                <div class="stars-black">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <div class="stars-gold" style="width: <%= spa.average_rating/5*100 %>%">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <%= spa.average_rating.round(1) %>
+                <% end %>
+              </p>
             <% end %>
           </div>
         <% end %>

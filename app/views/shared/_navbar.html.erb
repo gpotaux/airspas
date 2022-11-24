@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top nav-bg-color">
   <div class="container-fluid">
-    <%= link_to "/spas", class: "navbar-brand" do %>
+    <%= link_to "/#", class: "navbar-brand" do %>
       <%= image_tag "https://i.imgur.com/b81IJZF.png" %>
     <% end %>
     <h1 class="pt-1 head-title"> <%= link_to "AIRSPAS", "/spas", class: "nav-link"%> </h1>
@@ -13,13 +13,13 @@
         <% if user_signed_in? %>
           <div class="d-flex px-3">
             <li class="nav-item active">
-              <%= link_to "DASHBOARD", "/dashboards", class: "nav-link" %>
+              <%= link_to "MON DASHBOARD", "/dashboards", class: "nav-link" %>
             </li>
             <li class="nav-item active">
-              <%= link_to "BOOKINGS", "/bookings", class: "nav-link" %>
+              <%= link_to "MES BOOKINGS", "/bookings", class: "nav-link" %>
             </li>
             <li class="nav-item active">
-              <%= link_to "SPAS", "/spas", class: "nav-link" %>
+              <%= link_to "LES SPAS", "/spas", class: "nav-link" %>
             </li>
           </div>
           <li class="nav-item dropdown">
