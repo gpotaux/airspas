@@ -74,7 +74,7 @@
             <img src="https://img.freepik.com/photos-premium/arrangement-spa-serviette-du-savon-du-sel_23-2148268482.jpg?w=2000">
             <div class="description">
               <div>
-                <h4>Jaccuzi Le soleil du matin</h4>
+                <h4>Jaccuzzi Le soleil du matin</h4>
                 <p>A partir de <strong>128€</strong></p>
               </div>
             </div>
@@ -85,7 +85,7 @@
             <img src="https://www.thalassopornic.com/upload/media/page/0001/02/7919a4483f0600d3f0fe535a05676fda8581a561.jpeg">
             <div class="description">
               <div>
-                <h4>Hamam Au coeur de l'eau</h4>
+                <h4>Hammam Au coeur de l'eau</h4>
                 <p>A partir de <strong>71€</strong></p>
               </div>
             </div>
@@ -106,3 +106,7 @@
     </aside>
   </div>
 </div>
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
