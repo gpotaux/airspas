@@ -39,11 +39,7 @@
               <%= submit_tag "Search", class: "btn btn-secondary" %>
             <% end %>
           </div>
-          <div style="width: 100%; height: 150px;"
-            data-controller="map"
-            data-map-markers-value="<%= @markers.to_json %>"
-            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
+          <div style="width: 100%; height: 150px; "data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
     </div>
   </div>
@@ -57,24 +53,26 @@
             <%= link_to spa_path(spa) do %>
               <%= cl_image_tag spa.photo.key, crop: :fill %>
               <h5><%= spa.name %></h5>
-              <p>A partir de <strong><%= spa.price_per_hour %> EUR</strong></p>
+              <p>A partir de <strong><%= spa.price_per_hour %> €</strong></p>
               <p>
                 <% if spa.reviews.count.positive? %>
-                  <div class="stars-black">
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <div class="stars-gold" style="width: <%= spa.average_rating/5*100 %>%">
+                  <div class="star_rating">
+                    <div class="stars-black">
                       <i class="fa-sharp fa-solid fa-star"></i>
                       <i class="fa-sharp fa-solid fa-star"></i>
                       <i class="fa-sharp fa-solid fa-star"></i>
                       <i class="fa-sharp fa-solid fa-star"></i>
                       <i class="fa-sharp fa-solid fa-star"></i>
+                      <div class="stars-gold" style="width: <%= spa.average_rating/5*100 %>%">
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                      </div>
                     </div>
+                    <p><%= spa.average_rating.round(1) %></p>
                   </div>
-                  <%= spa.average_rating.round(1) %>
                 <% end %>
               </p>
             <% end %>
@@ -96,7 +94,7 @@
                 <div class="description">
                   <div>
                     <h4><%= spa.name %></h4>
-                    <p>A partir de <strong><%= spa.price_per_hour %></strong></p>
+                    <p>A partir de <strong><%= spa.price_per_hour %> €</strong></p>
                   </div>
                 </div>
             <% end %>
