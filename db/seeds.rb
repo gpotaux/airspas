@@ -31,7 +31,7 @@ puts "#{User.count} users created"
 
 puts "Creating spas.."
 
-spa1 = Spa.create!(name: "Ambispa", address: "60 rue de Paris 75000 Paris", price_per_hour: "80", category: "jacuzzi", user: User.first)
+spa1 = Spa.create!(name: "Ambispa", address: "65 Rue Henri Barbusse 75000 Paris", price_per_hour: "80", category: "jacuzzi", user: User.first)
 file = URI.open("https://ambispa.fr/wp-content/uploads/2018/10/Ambi-spa-privatif-Lille-detente-02.jpg")
 spa1.photo.attach(io: file, filename: "Ambi-spa-privatif-Lille-detente-02.jpg", content_type: "image/jpg")
 spa1.save
@@ -51,32 +51,69 @@ file = URI.open("https://www.eauzone-spa.com/images/centre_hellemmes/rio/rio_3.j
 spa4.photo.attach(io: file, filename: "photo-rio-de-janeiro.jpg?w=1200&h=1200&s=1", content_type: "image/jpg")
 spa4.save
 
-spa5 = Spa.create!(name: "Concept Spa", address: "10 avenue Pablo Picasso 33000 Bordeaux", price_per_hour: "80", category: "hammam", user: User.first)
+spa5 = Spa.create!(name: "Concept Spa", address: "80 rue du Tondu 33000 Bordeaux", price_per_hour: "80", category: "hammam", user: User.first)
 file = URI.open("https://www.tooistanbul.com/wp-content/uploads/2019/12/hamam.jpg")
 spa5.photo.attach(io: file, filename: "hamam.jpg", content_type: "image/jpg")
 spa5.save
 
-spa6 = Spa.create!(name: "Suite & Spa", address: "4 allée saint Benoit 44000 Nantes", price_per_hour: "50", category: "jacuzzi", user: User.second)
+spa6 = Spa.create!(name: "Suite & Spa", address: "4 rue Pierre Benoit 44000 Nantes", price_per_hour: "50", category: "jacuzzi", user: User.second)
 file = URI.open("https://www.eauzone-spa.com/images/centre_tourcoing/bali/bali_1.jpg")
 spa6.photo.attach(io: file, filename: "bali_1.jpg", content_type: "image/jpg")
 spa6.save
+
+spa7 = Spa.create!(name: "Apsara Thai Spa", address: "50 Rue Barthélémy Delespaul 59000 Lille", price_per_hour: "60", category: "sauna", user: User.first)
+file = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/de/81/4f/spa-privatif.jpg?w=1000&h=800&s=1")
+spa7.photo.attach(io: file, filename: "apsara-thai-spa.jpg", content_type: "image/jpg")
+spa7.save
+
+spa8 = Spa.create!(name: "Hammam Kechmara", address: "20 Rue de la Toussaint 67000 Strasbourg", price_per_hour: "90", category: "hammam", user: User.first)
+file = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/fa/ed/3f/salle-de-repos.jpg?w=1000&h=800&s=1")
+spa8.photo.attach(io: file, filename: "hammam-kechmara.png", content_type: "image/jpg")
+spa8.save
+
+spa9 = Spa.create!(name: "Saöna Spa", address: "66 Rue Martainville, 76000 Rouen", price_per_hour: "50", category: "jacuzzi", user: User.second)
+file = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/88/fe/bb/spa-privatif-avec-possibilite.jpg?w=1000&h=-1&s=1")
+spa9.photo.attach(io: file, filename: "saona-spa.jpg", content_type: "image/jpg")
+spa9.save
+
+spa10 = Spa.create!(name: "Zeîn Oriental Spa", address: "1 Rue Emile Romanet 74000 Annecy", price_per_hour: "80", category: "sauna", user: User.second)
+file = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/e8/76/bf/spa-de-l-hermitage-gantois.jpg?w=1000&h=800&s=1")
+spa10.photo.attach(io: file, filename: "photo-zein", content_type: "image/jpg")
+spa10.save
+
+spa11 = Spa.create!(name: "Spa by Clarins", address: "50 Rue Carnot, 26500 Bourg-lès-Valence", price_per_hour: "80", category: "hammam", user: User.first)
+file = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/d3/50/e1/notre-bassin-d-hiver.jpg?w=1000&h=800&s=1")
+spa11.photo.attach(io: file, filename: "hamam-8.jpg", content_type: "image/jpg")
+spa11.save
+
+spa12 = Spa.create!(name: "Lok Siam Spa", address: "2 Pl. Emile Cresp, 92120 Montrouge", price_per_hour: "50", category: "sauna", user: User.second)
+file = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/07/14/95/lok-siam-spa-ternes-offre.jpg?w=1000&h=800&s=1")
+spa12.photo.attach(io: file, filename: "bali_4.jpg", content_type: "image/jpg")
+spa12.save
 
 puts "#{Spa.count} spas created"
 # -----------------------------------------Creation Booking------------------------------------------------------
 puts "Creating bookings.."
 
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,11,23), end_date: Date.new(2022,11,26), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa1, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa2, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa3, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa4, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa5, start_date: Date.new(2022,11,23), end_date: Date.new(2022,11,26), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa6, start_date: Date.new(2022,05,02), end_date: Date.new(2022,05,10), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa1, start_date: Date.new(2022,05,11), end_date: Date.new(2022,05,15), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa2, start_date: Date.new(2023,01,10), end_date: Date.new(2023,01,15), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa3, start_date: Date.new(2022,12,10), end_date: Date.new(2022,12,20), status:"pending")
 
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,05,02), end_date: Date.new(2022,05,10), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,05,11), end_date: Date.new(2022,05,15), status:"pending")
-
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2023,01,10), end_date: Date.new(2023,01,15), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,10), end_date: Date.new(2022,12,20), status:"pending")
-
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: Spa.all.sample, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa7, start_date: Date.new(2022,12,12), end_date: Date.new(2022,12,15), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa8, start_date: Date.new(2022,12,12), end_date: Date.new(2022,12,15), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa9, start_date: Date.new(2022,12,12), end_date: Date.new(2022,12,15), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa10, start_date: Date.new(2022,12,12), end_date: Date.new(2022,12,15), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa11, start_date: Date.new(2022,11,29), end_date: Date.new(2022,11,30), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa12, start_date: Date.new(2022,05,11), end_date: Date.new(2022,05,13), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa7, start_date: Date.new(2022,05,23), end_date: Date.new(2022,05,29), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa8, start_date: Date.new(2023,01,10), end_date: Date.new(2023,01,15), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa9, start_date: Date.new(2022,12,10), end_date: Date.new(2022,12,20), status:"pending")
 
 puts "#{Booking.count} bookings created"
 
@@ -84,7 +121,7 @@ puts "#{Booking.count} bookings created"
 puts "Creating reviews.."
 
 Booking.all.each do |booking|
-  3.times { Review.create!(rating: (1..5).to_a.sample, booking: booking) }
+  3.times { Review.create!(rating: (3..5).to_a.sample, booking: booking) }
 end
 
 puts "#{Review.count} reviews created"
