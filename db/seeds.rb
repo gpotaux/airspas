@@ -13,22 +13,22 @@ user1 = User.create!(first_name: "Ines", last_name: "Kalis", email: "ines.kalis@
 user2 = User.create!(first_name: "Pierre", last_name: "Dupuis", email: "pierre.dupuis@gmail.com", password: "123456")
 # ------------------------------------------Création SPA---------------------
 
-spa = Spa.create!(name: "Ambispa", address: "60 rue de Paris 75000 Paris", price_per_hour: "80", category: "jacuzzi", user: User.first)
+spa = Spa.create!(name: "Ambispa", address: "60 rue de Paris 75000 Paris", price_per_hour: "80", category: "jacuzzi", rating: 4, user: User.first)
 file = URI.open("https://ambispa.fr/wp-content/uploads/2018/10/Ambi-spa-privatif-Lille-detente-02.jpg")
 spa.photo.attach(io: file, filename: "Ambi-spa-privatif-Lille-detente-02.jpg", content_type: "image/jpg")
 spa.save
 
-spa = Spa.create!(name: "Perle de douceur", address: "80 avenue de la liberté 59000 Lille", price_per_hour: "70", category: "hammam", user: User.first)
+spa = Spa.create!(name: "Perle de douceur", address: "80 avenue de la liberté 59000 Lille", price_per_hour: "70", category: "hammam", rating: 4.2, user: User.first)
 file = URI.open("https://chercheursdebeaute.cinqmondes.com/files/2020/09/hammam.jpg")
 spa.photo.attach(io: file, filename: "hammam.png", content_type: "image/jpg")
 spa.save
 
-spa = Spa.create!(name: "Sothys", address: "20 rue de la paix 69000 Lyon", price_per_hour: "50", category: "sauna", user: User.second)
+spa = Spa.create!(name: "Sothys", address: "20 rue de la paix 69000 Lyon", price_per_hour: "50", category: "sauna", rating: 4.5, user: User.second)
 file = URI.open("https://www.sante-forme.com/img/cms/sauna-professionnel.jpg")
 spa.photo.attach(io: file, filename: "sauna-professionnel.jpg", content_type: "image/jpg")
 spa.save
 
-spa = Spa.create!(name: "Perle d'O", address: "3 rue du ballon 59000 La Madeleine", price_per_hour: "60", category: "jacuzzi", user: User.second)
+spa = Spa.create!(name: "Perle d'O", address: "3 rue du ballon 59000 La Madeleine", price_per_hour: "60", category: "jacuzzi", rating: 3.6, user: User.second)
 file = URI.open("https://www.eauzone-spa.com/images/centre_hellemmes/rio/rio_3.jpg")
 spa.photo.attach(io: file, filename: "photo-rio-de-janeiro.jpg?w=1200&h=1200&s=1", content_type: "image/jpg")
 spa.save

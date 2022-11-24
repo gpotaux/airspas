@@ -1,0 +1,21 @@
+.stars-outer {
+
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  color: #f8ce0b;
+}
+
+.stars-outer::before {
+
+}
+
+.stars-inner::before {
+
+}
