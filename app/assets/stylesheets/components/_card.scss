@@ -103,3 +103,27 @@
 .booking-card {
   width: 70%;
 }
+
+// Media Queries
+
+@media (max-width: 1550px) and (min-width: 1200px){
+  /* … */
+  .dashboard-card-trip .dashboard-card-trip-infos {
+    padding: 16px;
+    display: block;
+    justify-content: space-around;
+    align-items: baseline;
+    position: relative;
+  }
+}
+
+@media (max-width: 800px){
+  /* … */
+  .dashboard-card-trip .dashboard-card-trip-infos {
+    padding: 16px;
+    display: block;
+    justify-content: space-around;
+    align-items: baseline;
+    position: relative;
+  }
+}
