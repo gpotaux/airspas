@@ -95,6 +95,25 @@
                   <div>
                     <h4><%= spa.name %></h4>
                     <p>A partir de <strong><%= spa.price_per_hour %> €</strong></p>
+                    <% if spa.reviews.count.positive? %>
+                      <div class="star_rating" id="star_rating_popular">
+                        <div class="stars-black">
+                          <i class="fa-sharp fa-solid fa-star"></i>
+                          <i class="fa-sharp fa-solid fa-star"></i>
+                          <i class="fa-sharp fa-solid fa-star"></i>
+                          <i class="fa-sharp fa-solid fa-star"></i>
+                          <i class="fa-sharp fa-solid fa-star"></i>
+                          <div class="stars-gold" style="width: <%= spa.average_rating/5*100 %>%">
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                          </div>
+                        </div>
+                        <p><%= spa.average_rating.round(1) %></p>
+                      </div>
+                    <% end %>
                   </div>
                 </div>
             <% end %>
