@@ -81,16 +81,34 @@
 
 // Media Queries
 
+@media only screen and (max-width: 1699px) {
+  .container.resize {
+    height: 815px;
+  }
+}
+
+@media only screen and (max-width: 1399px) {
+  .container.resize {
+    height: 880px;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .container.resize {
     display: block;
+    height: 1180px;
   }
+
   .show-map {
     display: none;
   }
 
   .img-spa {
     width: 620px;
+  }
+
+  .resize-bottom-block {
+    height: 900;
   }
 }
 
@@ -105,7 +123,12 @@
   }
 }
 
-@media only screen and (max-width: 766px) {
+@media only screen and (max-width: 768px) {
+  .container.resize {
+    display: block;
+    height: 1110px;
+  }
+
   .img-spa {
     width: 500px;
     height: 302px;
@@ -129,6 +152,6 @@
   .navbar-lewagon {
     justify-content: space-between;
     background-color: #f6e7c9;
-    height: 15vh;
+    height: 18vh;
   }
 }
