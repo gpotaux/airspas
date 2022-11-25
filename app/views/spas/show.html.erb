@@ -7,7 +7,7 @@
       <%= cl_image_tag @spa.photo.key, crop: :fill, class:"img-spa text-center" %>
     </div>
     <div class="show-map">
-      <div style="width: 493px; height: 350px;"
+      <div style="width: 494px; height: 350px;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
