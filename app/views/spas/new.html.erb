@@ -3,11 +3,11 @@
   <p>Entrez les informations de votre spa pour le mettre ligne</p>
 
   <%= simple_form_for(@spa) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :category, collection: Spa::CATEGORIES %>
-    <%= f.input :price_per_hour %>
+    <%= f.input :name, label: "Nom" %>
+    <%= f.input :address, label: "Adresse" %>
+    <%= f.input :category, collection: Spa::CATEGORIES, label: "Catégorie" %>
+    <%= f.input :price_per_hour, label: "Prix par heure €" %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit %>
+    <%= f.submit 'Créer le SPA' %>
   <% end %>
 </div>
