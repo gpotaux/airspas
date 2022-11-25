@@ -49,13 +49,24 @@ article > h4 {
   margin: 10px 30px
 }
 
+article > h4 > a {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(222, 184, 135);
+}
+
+article > h4 > a:hover {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(187, 153, 109);
+}
+
 // article_grid
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   height: 80%;
-  justify-content: space-evenly;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 // aside_grid
@@ -67,7 +78,7 @@ aside{
   height: 500px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: sticky;
-  top: 62px;
+  top: 120px;
   right: 58px;
 }
 
