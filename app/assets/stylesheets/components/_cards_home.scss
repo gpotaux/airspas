@@ -1,0 +1,65 @@
+#recent{
+  margin: 40px 0px 60px 0px;
+}
+
+#recent h1{
+  margin-bottom: 35px;
+  margin-left: 30px;
+}
+
+#recent div.activites_expo{
+  display: flex;
+}
+      /* Activités Cards & Img */
+
+div.activites_cards{
+  background-color: #FFF;
+  box-shadow:0px 0px 15px 4px #E1E1E1;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px;
+}
+
+div.activites_cards img{
+  height: 88%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px 25px 0px 0px;
+  filter: blur(0.6px);
+}
+
+div.activites_wrap img{
+  height: 74%;
+}
+
+div.activites_cards:hover img{
+  height: 100%;
+  filter: blur(0);
+  border-radius: 25px 25px 25px 25px;
+  transition: 1s all;
+}
+
+div.activites_cards h4{
+  font-family: "raleway-bold";
+  margin: 1.5% 5% 2% 6%;
+}
+
+div.activites_cards:hover h4{
+  display: none;
+}
+
+div.activites_wrap{
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  height: 320px;
+  justify-content: space-between;
+}
+
+div.activites_expo a{
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  color: #000;
+}
