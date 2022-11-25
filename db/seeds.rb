@@ -20,8 +20,9 @@ puts "Users destroyed"
 # -----------------------------------------Création user
 puts "Creating users.."
 
-User.create!(first_name: "Louise", last_name: "Dupont", email: "louise.dupont@gmail.com", password: "123456")
+User.create!(first_name: "Louis", last_name: "Michel", email: "louis.michel@gmail.com", password: "123456")
 User.create!(first_name: "Marc", last_name: "Leblanc", email: "marc.leblanc@gmail.com", password: "123456")
+User.create!(first_name: "Louise", last_name: "Dupont", email: "louise.dupont@gmail.com", password: "123456")
 
 user1 = User.create!(first_name: "Ines", last_name: "Kalis", email: "ines.kalis@gmail.com", password: "123456")
 user2 = User.create!(first_name: "Pierre", last_name: "Dupuis", email: "pierre.dupuis@gmail.com", password: "123456")
