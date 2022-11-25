@@ -52,8 +52,8 @@ file = URI.open("https://www.eauzone-spa.com/images/centre_hellemmes/rio/rio_3.j
 spa4.photo.attach(io: file, filename: "photo-rio-de-janeiro.jpg?w=1200&h=1200&s=1", content_type: "image/jpg")
 spa4.save
 
-spa5 = Spa.create!(name: "Spa La Zoologie", address: "151 Cours de la Marne, 33800, Bordeaux France", price_per_hour: "80", category: "hammam", user: User.first)
-file = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/76/3b/6d/jacuzzi.jpg?w=1400&h=-1&s=1")
+spa5 = Spa.create!(name: "Spa Tusmo", address: "151 Cours de la Marne, 33800, Bordeaux France", price_per_hour: "80", category: "hammam", user: User.first)
+file = URI.open("https://img.freepik.com/photos-premium/arrangement-spa-serviette-du-savon-du-sel_23-2148268482.jpg?w=2000")
 spa5.photo.attach(io: file, filename: "hamam.jpg", content_type: "image/jpg")
 spa5.save
 
