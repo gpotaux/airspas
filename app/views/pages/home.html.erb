@@ -7,23 +7,23 @@
 
 <div class="container">
   <div id="recent">
-    <h3>Ajouts récents</h3>
-    <div class="activites_expo">
-      <div class="activites_cards" id="card_home_1">
+    <h4>Ajouts récents</h4>
+    <div class="recent_cards_expo">
+      <div class="recent_cards_cards" id="card_home_1">
         <%= link_to spa_path(@spas_last[0]) do %>
           <%= cl_image_tag @spas_last[0].photo.key, crop: :fill %>
           <p><%= @spas_last[0].name %></p>
         <% end %>
       </div>
 
-      <div class="activites_wrap">
-        <div class="activites_cards" id="card_home_2">
+      <div class="recent_cards_wrap">
+        <div class="recent_cards_cards" id="card_home_2">
           <%= link_to spa_path(@spas_last[1]) do %>
             <%= cl_image_tag @spas_last[1].photo.key, crop: :fill %>
             <p><%= @spas_last[1].name %></p>
           <% end %>
         </div>
-        <div class="activites_cards" id="card_home_3">
+        <div class="recent_cards_cards" id="card_home_3">
           <%= link_to spa_path(@spas_last[2]) do %>
             <%= cl_image_tag @spas_last[2].photo.key, crop: :fill %>
             <p><%= @spas_last[2].name %></p>
@@ -31,21 +31,21 @@
         </div>
       </div>
 
-      <div class="activites_cards" id="card_home_4">
+      <div class="recent_cards_cards" id="card_home_4">
         <%= link_to spa_path(@spas_last[3]) do %>
           <%= cl_image_tag @spas_last[3].photo.key, crop: :fill %>
           <p><%= @spas_last[3].name %></p>
         <% end %>
       </div>
 
-      <div class="activites_wrap">
-        <div class="activites_cards" id="card_home_5">
+      <div class="recent_cards_wrap">
+        <div class="recent_cards_cards" id="card_home_5">
           <%= link_to spa_path(@spas_last[4]) do %>
             <%= cl_image_tag @spas_last[4].photo.key, crop: :fill %>
             <p><%= @spas_last[4].name %></p>
           <% end %>
         </div>
-        <div class="activites_cards" id="card_home_6">
+        <div class="recent_cards_cards" id="card_home_6">
           <%= link_to spa_path(@spas_last[5]) do %>
             <%= cl_image_tag @spas_last[5].photo.key, crop: :fill %>
             <p><%= @spas_last[5].name %></p>
