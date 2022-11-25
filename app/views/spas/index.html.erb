@@ -36,7 +36,7 @@
               <% request.params.slice("category").each do |key, value| %>
                 <%= hidden_field_tag key, value %>
               <% end %>
-              <%= submit_tag "Search", class: "btn btn-secondary" %>
+              <%= submit_tag "Chercher", class: "btn btn-secondary" %>
             <% end %>
           </div>
           <div style="width: 100%; height: 150px; "data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>

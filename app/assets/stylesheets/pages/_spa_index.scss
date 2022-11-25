@@ -39,11 +39,9 @@
 article{
   display: flex;
   flex-direction: column;
-  background-color:#FFF ;
+  background-color: #FFF;
   border-radius: 25px;
-  width: 62%;
-  height: 500px;
-  overflow: auto;
+  width: 70%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -63,14 +61,14 @@ article > h4 {
 // aside_grid
 
 aside{
-  width:32%;
-  background-color:#FFF ;
+  width: 28%;
+  background-color: #FFF;
   border-radius: 25px;
   height: 500px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  position: fixed;
-  top: 285px;
-  right: 30px;
+  position: sticky;
+  top: 62px;
+  right: 58px;
 }
 
 aside > .aside_title {
