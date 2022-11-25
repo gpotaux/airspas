@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.user = current_user
     @booking.spa = @spa
-    @booking.status = "pending"
+    @booking.status = "en attente"
     @booking.start_date = selected_dates[0]
     @booking.end_date = selected_dates[1]
     authorize @booking
