@@ -33,7 +33,7 @@ div.recent_cards_cards{
   height: 50%;
 }
 #card_home_2 img{
-  height: 90%;
+  height: 85%;
 }
 
 #card_home_3{
@@ -73,6 +73,7 @@ div.recent_cards_cards img{
   width: 100%;
   object-fit: cover;
   border-radius: 25px 25px 0px 0px;
+  transition: 0.6s all;
 }
 
 div.recent_cards_wrap img{
