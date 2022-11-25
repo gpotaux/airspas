@@ -24,13 +24,14 @@
             <% if user_signed_in? %>
               <div class="d-flex px-3">
                 <li class="nav-item active">
+                <%= link_to "LES SPAS", "/spas", class: "nav-link" %>
+
+                </li>
+                <li class="nav-item active">
                   <%= link_to "MES LOCATIONS", "/dashboards", class: "nav-link" %>
                 </li>
                 <li class="nav-item active">
                   <%= link_to "MES RESERVATIONS", "/bookings", class: "nav-link" %>
-                </li>
-                <li class="nav-item active">
-                  <%= link_to "LES SPAS", "/spas", class: "nav-link" %>
                 </li>
               </div>
               <li class="nav-item dropdown">
