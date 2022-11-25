@@ -106,9 +106,6 @@ spa15 = Spa.create!(name: "Les 5 mondes", address: "30 Rue de Paris, 92110 Clich
 file = URI.open("https://www.hydroconcept.mc/images/114_-_Sauna_-_Mur_de_sel_-_Eden_arcopt.jpg")
 spa15.photo.attach(io: file, filename: "5_mondes", content_type: "image/jpg")
 spa15.save
-
-
-
 puts "#{Spa.count} spas crées"
 # -----------------------------------------Creation Booking------------------------------------------------------
 puts "Creating bookings.."
