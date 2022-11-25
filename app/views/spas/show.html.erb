@@ -1,11 +1,22 @@
 <div class="fix_footer_down">
 
 
-<div class="container">
-  <div class="expo-show">
-    <%= cl_image_tag @spa.photo.key, crop: :fill, class:"img-spa text-center" %>
+<div class="container mt-4 mb-4 bg-white resize">
+  <div class="resize-upperblock">
+    <div>
+      <%= cl_image_tag @spa.photo.key, crop: :fill, class:"img-spa text-center" %>
+    </div>
+    <div class="show-map">
+      <div style="width: 493px; height: 350px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
+  <div class="resize-bottom-block">
     <div class="card-info">
-      <h5>
+      <h5 class="title">
         <%= @spa.name.capitalize %>
         <% if policy(@spa).edit? %> <%= link_to image_tag("https://cdn-icons-png.flaticon.com/512/1827/1827951.png", class: "picto"), edit_spa_path(@spa) %> <% end %>
         <% if policy(@spa).destroy? %> | <%= link_to image_tag("https://cdn-icons-png.flaticon.com/512/1214/1214428.png", class: "picto"), spa_path(@spa), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr ?"} %><% end %>
@@ -33,24 +44,23 @@
       <p><%= @spa.price_per_hour %>€ pour une heure</p>
       <p>Description :</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, iste sed ea quibusdam quidem vel perspiciatis magni alias fuga, eum unde enim doloribus ullam neque deserunt tenetur ducimus officia at.</p>
+      <div class="calendar">
+        <div data-controller="flatpickr">
+          <% if current_user.id != @spa.user_id  %>
+            <div id='flat-booking-dates'>
+                <%= simple_form_for([@spa, @booking]) do |f| %>
+                  <%= f.input :start_date, as: :string, label: "Sélectionnez vos dates", input_html: { id: "range_start", class: "d-none", data: { action: "change->flatpickr#handleChange", 'flatpickr-target' => 'inputStartDate' } } %>
+                  <%= hidden_field_tag f.input :end_date, as: :date, html5: true, input_html: { id: "range_end", class: "d-none", data: { action: "change->flatpickr#handleChange", target: 'flatpickr.inputEndDate' } } %>
+                  <p>Nombre de jours au total : <span data-flatpickr-target="days"></span></p>
+                  <%= f.button :submit, 'Réservez votre spa!', class: 'btn btn-secondary' %>
+                <% end %>
+            </div>
+            <div data-flatpickr-target="bookingForm"
+              data-bookings="<%= @bookings_dates.to_json %>">
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-<div data-controller="flatpickr">
-  <% if current_user.id != @spa.user_id  %>
-    <h1 > Réservez votre spa!</h1>
-    <div id='flat-booking-dates'>
-        <%= simple_form_for([@spa, @booking]) do |f| %>
-            <%= f.input :start_date, as: :string, label: "Sélectionnez vos dates", input_html: { id: "range_start", class: "d-none", data: { action: "change->flatpickr#handleChange", 'flatpickr-target' => 'inputStartDate' } } %>
-            <%= hidden_field_tag f.input :end_date, as: :date, html5: true, input_html: { id: "range_end", class: "d-none", data: { action: "change->flatpickr#handleChange", target: 'flatpickr.inputEndDate' } } %>
-            <p>Nombre de jours au total : <span data-flatpickr-target="days"></span></p>
-            <%= f.button :submit, 'Réservez votre spa!', class: 'btn btn-secondary' %>
-        <% end %>
-    </div>
-    <div data-flatpickr-target="bookingForm"
-      data-bookings="<%= @bookings_dates.to_json %>">
-    </div>
-  <% end %>
-
 </div>

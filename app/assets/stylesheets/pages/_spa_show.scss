@@ -4,19 +4,36 @@
   margin: 30px;
 }
 
-.card-info {
+/*.card-info {
   background-color: white;
   width: 40%;
   margin-left: 26px;
   border-radius: 10px;
   padding: 10px;
-  overflow: auto;
-  height: 300px;
+  height: 700px;
+}*/
+
+.card-info {
+  background-color: white;
+  width: 70%;
+  margin-left: 150px;
+  border-radius: 10px;
+  padding: 7px;
+  height: 700px;
 }
 
+// .img-spa {
+//   width: 420px;
+//   height: 300px;
+//   text-align: center;
+//   background-color: #FFF;
+//   padding: 6px;
+//   border-radius: 10px;
+// }
+
 .img-spa {
-  width: 420px;
-  height: 300px;
+  width: 600px;
+  height: 400px;
   text-align: center;
   background-color: #FFF;
   padding: 6px;
@@ -33,4 +50,87 @@
 
 #star_rating_show .stars-black {
   margin-left: 0px;
+
+// test
+
+// .resize {
+//   box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+// }
+.resize-upperblock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container.resize {
+  display: flex;
+  padding: 17px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.calendar {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+// Media Queries
+
+@media only screen and (max-width: 1200px) {
+  .container.resize {
+    display: block;
+  }
+  .show-map {
+    display: none;
+  }
+
+  .img-spa {
+    width: 620px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .card-info {
+    background-color: white;
+    width: 90%;
+    margin-left: 35px;
+    border-radius: 10px;
+    padding: 7px;
+    height: 700px;
+  }
+}
+
+@media only screen and (max-width: 766px) {
+  .img-spa {
+    width: 500px;
+    height: 302px;
+  }
+
+  .resize-bottom-block {
+    height: 735px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .resize-bottom-block {
+    height: 760px;
+  }
+
+  .img-spa {
+    width: 450px;
+    height: 284px;
+  }
+
+  .navbar-lewagon {
+    justify-content: space-between;
+    background-color: #f6e7c9;
+    height: 15vh;
+  }
 }
