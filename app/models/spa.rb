@@ -17,6 +17,8 @@ class Spa < ApplicationRecord
         sum += review.rating
       end
       sum / reviews.count
+    else
+      0
     end
   end
 end
