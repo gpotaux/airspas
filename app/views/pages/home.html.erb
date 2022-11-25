@@ -1,58 +1,55 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://coquillade.fr/_novaimg/4698289-1490140_70_994_4419_1177_2200_586.jpg);">
     <h1>Venez vous détendre dans notre sélection de SPA faite pour vous!</h1>
     <div class="btn-banner">
-      <a class="btn btn-light mt-5 rounded-pill" href="/spas">Un moment de détente?</a>
+      <a class="btn btn-light mt-5 rounded-pill" href="/spas">Un moment de détente ?</a>
     </div>
 </div>
 
 <div class="container">
   <div id="recent">
-
-    <h1>Ajouts récents</h1>
-
+    <h3>Ajouts récents</h3>
     <div class="activites_expo">
-
-      <div class="activites_cards" id="vieux_port">
-        <a href="#">
-        <img src="css/img/activites/3_medium/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" alt="photo Vieux Port">
-        <h4>Vieux Port</h4>
-        </a>
+      <div class="activites_cards" id="card_home_1">
+        <%= link_to spa_path(@spas_last[0]) do %>
+          <%= cl_image_tag @spas_last[0].photo.key, crop: :fill %>
+          <p><%= @spas_last[0].name %></p>
+        <% end %>
       </div>
 
       <div class="activites_wrap">
-        <div class="activites_cards" id="fort_pomegues">
-          <a href="#">
-          <img src="css/img/activites/3_medium/paul-hermann-QFTrLdQIRhI-unsplash.jpg" alt="photo Fort de Pomègues">
-          <h4>Fort de Pomègues</h4>
-          </a>
+        <div class="activites_cards" id="card_home_2">
+          <%= link_to spa_path(@spas_last[1]) do %>
+            <%= cl_image_tag @spas_last[1].photo.key, crop: :fill %>
+            <p><%= @spas_last[1].name %></p>
+          <% end %>
         </div>
-        <div class="activites_cards" id="iles_frioul">
-          <a href="#">
-          <img src="css/img/activites/3_medium/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="photo Îles du Frioul">
-          <h4>Îles du Frioul</h4>
-          </a>
+        <div class="activites_cards" id="card_home_3">
+          <%= link_to spa_path(@spas_last[2]) do %>
+            <%= cl_image_tag @spas_last[2].photo.key, crop: :fill %>
+            <p><%= @spas_last[2].name %></p>
+          <% end %>
         </div>
       </div>
 
-      <div class="activites_cards" id="parc_calanques">
-        <a href="#">
-        <img src="css/img/activites/3_medium/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" alt="photo Parc National des Calanques">
-        <h4>Parc National des Calanques</h4>
-        </a>
+      <div class="activites_cards" id="card_home_4">
+        <%= link_to spa_path(@spas_last[3]) do %>
+          <%= cl_image_tag @spas_last[3].photo.key, crop: :fill %>
+          <p><%= @spas_last[3].name %></p>
+        <% end %>
       </div>
 
       <div class="activites_wrap">
-        <div class="activites_cards" id="dame_garde">
-          <a href="#">
-          <img src="css/img/activites/1_xlarge/florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="photo Notre-Dame-de-la-Garde">
-          <h4>Notre-Dame-de-la-Garde</h4>
-          </a>
+        <div class="activites_cards" id="card_home_5">
+          <%= link_to spa_path(@spas_last[4]) do %>
+            <%= cl_image_tag @spas_last[4].photo.key, crop: :fill %>
+            <p><%= @spas_last[4].name %></p>
+          <% end %>
         </div>
-        <div class="activites_cards" id="parc_longchamp">
-          <a href="#">
-          <img src="css/img/activites/3_medium/lena-paulin-wH2-EJoDcV0-unsplash.jpg" alt="photo Parc Longchamp">
-          <h4>Parc Longchamp</h4>
-          </a>
+        <div class="activites_cards" id="card_home_6">
+          <%= link_to spa_path(@spas_last[5]) do %>
+            <%= cl_image_tag @spas_last[5].photo.key, crop: :fill %>
+            <p><%= @spas_last[5].name %></p>
+          <% end %>
         </div>
       </div>
     </div>

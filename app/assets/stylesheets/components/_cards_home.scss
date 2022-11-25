@@ -2,13 +2,14 @@
   margin: 40px 0px 60px 0px;
 }
 
-#recent h1{
+#recent h3{
   margin-bottom: 35px;
   margin-left: 30px;
 }
 
 #recent div.activites_expo{
   display: flex;
+  height: 400px;
 }
       /* Activités Cards & Img */
 
@@ -21,12 +22,57 @@ div.activites_cards{
   margin: 0px 20px;
 }
 
+#card_home_1{
+  width: 32%;
+}
+#card_home_1 img{
+  height: 92%;
+}
+
+#card_home_2{
+  height: 50%;
+}
+#card_home_2 img{
+  height: 90%;
+}
+
+#card_home_3{
+  height: 38%;
+}
+#card_home_3 img{
+  height: 79%;
+}
+
+#card_home_4{
+  width: 32%;
+}
+#card_home_4 img{
+  height: 92%;
+}
+
+#card_home_5{
+  height: 34%;
+}
+#card_home_5 img{
+  height: 79%;
+}
+
+#card_home_6{
+  height: 57%;
+}
+#card_home_6 img{
+  height: 90%;
+}
+
+.activites_wrap .activites_cards{
+  height: 30%;
+}
+
 div.activites_cards img{
   height: 88%;
   width: 100%;
   object-fit: cover;
   border-radius: 25px 25px 0px 0px;
-  filter: blur(0.6px);
 }
 
 div.activites_wrap img{
@@ -34,27 +80,27 @@ div.activites_wrap img{
 }
 
 div.activites_cards:hover img{
-  height: 100%;
+  height: 100% !important;
   filter: blur(0);
   border-radius: 25px 25px 25px 25px;
-  transition: 1s all;
+  transition: 0.6s all;
 }
 
-div.activites_cards h4{
-  font-family: "raleway-bold";
-  margin: 1.5% 5% 2% 6%;
+div.activites_cards p{
+  margin: 1.5% 6% 2% 6%;
+  display: flex;
+  justify-content: center;
 }
 
-div.activites_cards:hover h4{
+div.activites_cards:hover p{
   display: none;
 }
 
 div.activites_wrap{
   display: flex;
   flex-direction: column;
-  width: 23%;
-  height: 320px;
   justify-content: space-between;
+  width: 30%;
 }
 
 div.activites_expo a{
@@ -62,4 +108,7 @@ div.activites_expo a{
   height: 100%;
   width: 100%;
   color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
