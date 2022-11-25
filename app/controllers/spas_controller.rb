@@ -22,6 +22,8 @@ class SpasController < ApplicationController
     #   # Ici, on vise l'ensemble des spa (Spa.all mais avec le pundit)
     # end
 
+    # Array des 5 plus populaires mélangés pour affichage dans l'index :
+    @spas_sorted = Spa.all.sort_by { |spa_to_sort| spa_to_sort.average_rating }.reverse.slice(0..4).sample(3).sort_by { |spa_to_sort| spa_to_sort.average_rating }.reverse
   end
 
   def show

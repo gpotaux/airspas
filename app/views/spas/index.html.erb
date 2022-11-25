@@ -32,22 +32,14 @@
         <div class="research_tab">
           <div class="research_symbol"> <img src="https://cdn-icons-png.flaticon.com/512/7472/7472700.png" alt="research_pin_symbol"> </div>
             <%= form_with url: spas_path, method: :get, class: "d-flex" do %>
-              <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "Trouvez un spa"
-              %>
-                <% request.params.slice("category").each do |key, value| %>
+              <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Trouvez un spa"%>
+              <% request.params.slice("category").each do |key, value| %>
                 <%= hidden_field_tag key, value %>
               <% end %>
               <%= submit_tag "Search", class: "btn btn-secondary" %>
             <% end %>
           </div>
-          <div style="width: 100%; height: 150px;"
-            data-controller="map"
-            data-map-markers-value="<%= @markers.to_json %>"
-            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
+          <div style="width: 100%; height: 150px; "data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
     </div>
   </div>
@@ -60,27 +52,29 @@
           <div class="card-selection">
             <%= link_to spa_path(spa) do %>
               <%= cl_image_tag spa.photo.key, crop: :fill %>
-              <h5><%= spa.name %></h5>
-              <p>A partir de <strong><%= spa.price_per_hour %> EUR</strong></p>
-              <p>
-              <% if spa.reviews.count.positive? %>
-                <div class="stars-black">
-                  <i class="fa-sharp fa-solid fa-star"></i>
-                  <i class="fa-sharp fa-solid fa-star"></i>
-                  <i class="fa-sharp fa-solid fa-star"></i>
-                  <i class="fa-sharp fa-solid fa-star"></i>
-                  <i class="fa-sharp fa-solid fa-star"></i>
-                  <div class="stars-gold" style="width: <%= spa.average_rating/5*100 %>%">
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
+              <div class="d-flex justify-content-between">
+                <h5><%= spa.name %></h5>
+                <% if spa.reviews.count.positive? %>
+                  <div class="star_rating" id="star_rating_selection">
+                    <div class="stars-black">
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <div class="stars-gold" style="width: <%= spa.average_rating/5*100 %>%">
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                    <p><%= spa.average_rating.round(1) %></p>
                   </div>
-                </div>
-                <%= spa.average_rating.round(1) %>
                 <% end %>
-              </p>
+              </div>
+              <span>A partir de <strong><%= spa.price_per_hour %> €</strong></span>
             <% end %>
           </div>
         <% end %>
@@ -93,39 +87,38 @@
         <h4>&#9733;</h4>
       </div>
       <div class="aside_grid">
-        <div class="card-aside">
-          <a href="#">
-            <img src="https://img.freepik.com/photos-premium/arrangement-spa-serviette-du-savon-du-sel_23-2148268482.jpg?w=2000">
-            <div class="description">
-              <div>
-                <h4>Jaccuzzi Le soleil du matin</h4>
-                <p>A partir de <strong>128€</strong></p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card-aside">
-          <a href="#">
-            <img src="https://www.thalassopornic.com/upload/media/page/0001/02/7919a4483f0600d3f0fe535a05676fda8581a561.jpeg">
-            <div class="description">
-              <div>
-                <h4>Hammam Au coeur de l'eau</h4>
-                <p>A partir de <strong>71€</strong></p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="card-aside">
-          <a href="#">
-            <img src="https://www.samm-honfleur.com/gallery/20210607152738.jpg">
-            <div class="description">
-              <div>
-                <h4>Spa Tout Bleu et Blanc</h4>
-                <p>A partir de <strong>68€</strong></p>
-              </div>
-            </div>
-          </a>
-        </div>
+        <% @spas_sorted.each do |spa| %>
+          <div class="card-aside">
+            <%= link_to spa_path(spa) do %>
+                <%= cl_image_tag spa.photo.key, crop: :fill %>
+                <div class="description">
+                  <div>
+                    <h4><%= spa.name %></h4>
+                    <p>A partir de <strong><%= spa.price_per_hour %> €</strong></p>
+                    <% if spa.reviews.count.positive? %>
+                      <div class="star_rating" id="star_rating_popular">
+                        <div class="stars-black">
+                          <i class="fa-sharp fa-solid fa-star"></i>
+                          <i class="fa-sharp fa-solid fa-star"></i>
+                          <i class="fa-sharp fa-solid fa-star"></i>
+                          <i class="fa-sharp fa-solid fa-star"></i>
+                          <i class="fa-sharp fa-solid fa-star"></i>
+                          <div class="stars-gold" style="width: <%= spa.average_rating/5*100 %>%">
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                          </div>
+                        </div>
+                        <p><%= spa.average_rating.round(1) %></p>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+        <% end %>
 			</div>
     </aside>
   </div>

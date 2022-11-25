@@ -2,6 +2,11 @@
   position: relative;
   display: inline-block;
   color: #ccc;
+  font-size: 0.7em;
+}
+
+.stars-black i {
+  margin: -1.5px;
 }
 
 .stars-gold {
@@ -12,4 +17,13 @@
   overflow: hidden;
   color: #f8ce0b;
   // width: 100%;
+}
+
+.star_rating {
+  display: flex;
+}
+
+.star_rating p {
+  font-size: 0.7em;
+  margin-left: 6px;
 }

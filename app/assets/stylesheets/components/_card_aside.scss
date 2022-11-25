@@ -30,6 +30,7 @@
 
 .card-aside p{
   font-size: 11px;
+  margin-bottom: 0px;
 }
 
 .card-aside .description{
@@ -46,4 +47,12 @@
   color: #000;
   display: flex;
   flex-direction: row;
+}
+
+#star_rating_popular {
+  margin-top: 3px;
+}
+
+#star_rating_popular .stars-black {
+  margin-left: 0px;
 }
