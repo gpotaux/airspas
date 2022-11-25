@@ -17,15 +17,15 @@
                 <p>
                   <strong>Statut</strong> : <%= booking.status %>
                 </p>
-                <% if booking.status == "validated" %>
-                  <%= link_to 'Pending', edit_dashboard_path(booking, {status: "pending"}), class: "btn btn-secondary" %>
-                  <%= link_to 'Refuser', edit_dashboard_path(booking, {status: "declined"}), class: "btn btn-danger text-white"  %>
-                <% elsif booking.status == "declined" %>
-                  <%= link_to 'Pending', edit_dashboard_path(booking, {status: "pending"}), class: "btn btn-secondary" %>
-                  <%= link_to 'Valider', edit_dashboard_path(booking, {status: "validated"}), class: "btn btn-primary" %>
+                <% if booking.status == "accepté" %>
+                  <%= link_to 'Annuler', edit_dashboard_path(booking, {status: "en attente"}), class: "btn btn-secondary" %>
+                  <%= link_to 'Refuser', edit_dashboard_path(booking, {status: "refusé"}), class: "btn btn-danger text-white"  %>
+                <% elsif booking.status == "refusé" %>
+                  <%= link_to 'Annuler', edit_dashboard_path(booking, {status: "en attente"}), class: "btn btn-secondary" %>
+                  <%= link_to 'Valider', edit_dashboard_path(booking, {status: "accepté"}), class: "btn btn-primary" %>
                 <% else %>
-                  <%= link_to 'Valider', edit_dashboard_path(booking, {status: "validated"}), class: "btn btn-primary" %>
-                  <%= link_to 'Refuser', edit_dashboard_path(booking, {status: "declined"}), class: "btn btn-danger text-white"  %>
+                  <%= link_to 'Valider', edit_dashboard_path(booking, {status: "accepté"}), class: "btn btn-primary" %>
+                  <%= link_to 'Refuser', edit_dashboard_path(booking, {status: "refusé"}), class: "btn btn-danger text-white"  %>
                 <% end %>
               </div>
             </div>

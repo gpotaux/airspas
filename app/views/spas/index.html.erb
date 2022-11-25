@@ -2,7 +2,7 @@
 <%# Top index  %>
 <div class="container">
   <div class="top_index">
-    <div class="d-flex justify-content-around">
+    <div class="d-flex justify-content-between align-items-center">
       <div>
         <h4>Trouvez le spa de vos rêves</h4>
         <p>Parmis les plus beaux jacuzzis, hammams et saunas, partout en France !</p>
@@ -19,7 +19,7 @@
               <li class="filter_button <%= "active" if params[:category] == "Jacuzzi" %>">Jacuzzi</li>
             <% end %>
             <%= link_to spas_path do %>
-              <li class="filter_button">Reset</li>
+              <li class="filter_button">Sans filtre</li>
             <% end %>
           </ul>
         </div>
@@ -36,7 +36,7 @@
               <% request.params.slice("category").each do |key, value| %>
                 <%= hidden_field_tag key, value %>
               <% end %>
-              <%= submit_tag "Search", class: "btn btn-secondary" %>
+              <%= submit_tag "Chercher", class: "btn btn-secondary" %>
             <% end %>
           </div>
           <div style="width: 100%; height: 150px; "data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
@@ -46,13 +46,13 @@
 
   <div class="d-flex justify-content-between">
     <article>
-      <h4>La selection <%= link_to "+", new_spa_path if policy(Spa).new? %></h4>
+      <h4>La selection <%= link_to "(+ Ajouter votre SPA)", new_spa_path if policy(Spa).new? %></h4>
       <div class="grid">
         <% @spas.each do |spa| %>
           <div class="card-selection">
             <%= link_to spa_path(spa) do %>
               <%= cl_image_tag spa.photo.key, crop: :fill %>
-              <div class="d-flex justify-content-between">
+              <div class="card-selection-header">
                 <h5><%= spa.name %></h5>
                 <% if spa.reviews.count.positive? %>
                   <div class="star_rating" id="star_rating_selection">
