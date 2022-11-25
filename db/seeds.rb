@@ -92,29 +92,39 @@ file = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/07/1
 spa12.photo.attach(io: file, filename: "bali_4.jpg", content_type: "image/jpg")
 spa12.save
 
-puts "#{Spa.count} spas created"
+spa13 = Spa.create!(name: "Istanbul Hammam", address: "2 Rue du Conservatoire, 75009 Paris", price_per_hour: "50", category: "hammam", user: User.second)
+file = URI.open("https://www.voyageavecnous.fr/wp-content/uploads/2022/09/hamam-istanbul-1038x695.jpg")
+spa13.photo.attach(io: file, filename: "istanbul_hammam", content_type: "image/jpg")
+spa13.save
+
+spa14 = Spa.create!(name: "Ban Thai Spa", address: "Rue de Bayard, 31000 Toulouse", price_per_hour: "60", category: "jacuzzi", user: User.second)
+file = URI.open("https://www.wonderbox.fr/wondermedias/sys_master/productmedias/h57/hc8/935508-560x373.jpg")
+spa14.photo.attach(io: file, filename: "thai_spa", content_type: "image/jpg")
+spa14.save
+
+puts "#{Spa.count} spas crées"
 # -----------------------------------------Creation Booking------------------------------------------------------
 puts "Creating bookings.."
 
-Booking.create!(user: [user1, user2].sample, spa: spa1, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa2, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa3, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa4, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa5, start_date: Date.new(2022,11,23), end_date: Date.new(2022,11,26), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa6, start_date: Date.new(2022,05,02), end_date: Date.new(2022,05,10), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa1, start_date: Date.new(2022,05,11), end_date: Date.new(2022,05,15), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa2, start_date: Date.new(2023,01,10), end_date: Date.new(2023,01,15), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa3, start_date: Date.new(2022,12,10), end_date: Date.new(2022,12,20), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa1, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa2, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa3, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa4, start_date: Date.new(2022,12,02), end_date: Date.new(2022,12,05), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa5, start_date: Date.new(2022,11,23), end_date: Date.new(2022,11,26), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa6, start_date: Date.new(2022,05,02), end_date: Date.new(2022,05,10), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa1, start_date: Date.new(2022,05,11), end_date: Date.new(2022,05,15), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa2, start_date: Date.new(2023,01,10), end_date: Date.new(2023,01,15), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa3, start_date: Date.new(2022,12,10), end_date: Date.new(2022,12,20), status:"en attente")
 
-Booking.create!(user: [user1, user2].sample, spa: spa7, start_date: Date.new(2022,12,12), end_date: Date.new(2022,12,15), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa8, start_date: Date.new(2022,12,12), end_date: Date.new(2022,12,15), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa9, start_date: Date.new(2022,12,12), end_date: Date.new(2022,12,15), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa10, start_date: Date.new(2022,12,12), end_date: Date.new(2022,12,15), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa11, start_date: Date.new(2022,11,29), end_date: Date.new(2022,11,30), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa12, start_date: Date.new(2022,05,11), end_date: Date.new(2022,05,13), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa7, start_date: Date.new(2022,05,23), end_date: Date.new(2022,05,29), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa8, start_date: Date.new(2023,01,10), end_date: Date.new(2023,01,15), status:"pending")
-Booking.create!(user: [user1, user2].sample, spa: spa9, start_date: Date.new(2022,12,10), end_date: Date.new(2022,12,20), status:"pending")
+Booking.create!(user: [user1, user2].sample, spa: spa7, start_date: Date.new(2022,12,12), end_date: Date.new(2022,12,15), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa8, start_date: Date.new(2022,12,12), end_date: Date.new(2022,12,15), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa9, start_date: Date.new(2022,12,12), end_date: Date.new(2022,12,15), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa10, start_date: Date.new(2022,12,12), end_date: Date.new(2022,12,15), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa11, start_date: Date.new(2022,11,29), end_date: Date.new(2022,11,30), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa12, start_date: Date.new(2022,05,11), end_date: Date.new(2022,05,13), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa7, start_date: Date.new(2022,05,23), end_date: Date.new(2022,05,29), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa8, start_date: Date.new(2023,01,10), end_date: Date.new(2023,01,15), status:"en attente")
+Booking.create!(user: [user1, user2].sample, spa: spa9, start_date: Date.new(2022,12,10), end_date: Date.new(2022,12,20), status:"en attente")
 
 puts "#{Booking.count} bookings created"
 
