@@ -15,3 +15,22 @@
 .login-size{
 font-size: larger;
 }
+
+
+
+
+.box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.box:first-child > span { margin-right: auto; }
+
+.box:last-child  > span { margin-left: auto;  }
+
+/* non-essential */
+.box {
+  align-items: center;
+
+}
