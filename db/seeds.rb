@@ -97,10 +97,17 @@ file = URI.open("https://www.voyageavecnous.fr/wp-content/uploads/2022/09/hamam-
 spa13.photo.attach(io: file, filename: "istanbul_hammam", content_type: "image/jpg")
 spa13.save
 
-spa14 = Spa.create!(name: "Ban Thai Spa", address: "Rue de Bayard, 31000 Toulouse", price_per_hour: "60", category: "jacuzzi", user: User.second)
+spa14 = Spa.create!(name: "Ban Thai Spa", address: " 1 Rue de Bayard, 31000 Toulouse", price_per_hour: "60", category: "jacuzzi", user: User.second)
 file = URI.open("https://www.wonderbox.fr/wondermedias/sys_master/productmedias/h57/hc8/935508-560x373.jpg")
 spa14.photo.attach(io: file, filename: "thai_spa", content_type: "image/jpg")
 spa14.save
+
+spa15 = Spa.create!(name: "Les 5 mondes", address: "30 Rue de Paris, 92110 Clichy", price_per_hour: "70", category: "sauna", user: User.second)
+file = URI.open("https://www.hydroconcept.mc/images/114_-_Sauna_-_Mur_de_sel_-_Eden_arcopt.jpg")
+spa15.photo.attach(io: file, filename: "5_mondes", content_type: "image/jpg")
+spa15.save
+
+
 
 puts "#{Spa.count} spas crées"
 # -----------------------------------------Creation Booking------------------------------------------------------
